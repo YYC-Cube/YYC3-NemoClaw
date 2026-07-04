@@ -2,12 +2,11 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { describe, expect, it, vi } from "vitest";
-
-import type { BackupResult } from "../../../dist/lib/state/sandbox";
 import {
   backupSandboxBeforeRecreate,
   shouldSkipPreRecreateBackup,
 } from "../../../dist/lib/onboard/sandbox-backup-on-recreate";
+import type { BackupResult } from "../../../dist/lib/state/sandbox";
 
 function makeBackup(overrides: Partial<BackupResult> = {}): BackupResult {
   return {

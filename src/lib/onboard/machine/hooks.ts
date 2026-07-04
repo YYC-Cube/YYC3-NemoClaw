@@ -8,9 +8,9 @@ import { redactSensitiveText } from "../../security/redact";
 import {
   addOnboardMachineEventListener,
   emitOnboardMachineEvent,
-  sanitizeOnboardMachineEventMetadata,
   type OnboardMachineEvent,
   type OnboardMachineEventListener,
+  sanitizeOnboardMachineEventMetadata,
 } from "./events";
 
 export interface OnboardHook {

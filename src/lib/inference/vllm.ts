@@ -14,11 +14,11 @@ import { VLLM_PORT } from "../core/ports";
 import { runCapture, runShell } from "../runner";
 import { getGpuIndicesByName } from "./nim";
 import {
-  DEFAULT_VLLM_MODEL,
-  VLLM_MODELS,
   assertGatedModelAccess,
   buildVllmServeCommand,
+  DEFAULT_VLLM_MODEL,
   selectVllmModelFromEnv,
+  VLLM_MODELS,
   type VllmModelDef,
 } from "./vllm-models";
 

@@ -2,11 +2,11 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import {
-  dockerCapture,
-  dockerRun,
   type DockerCaptureOptions,
   type DockerRunOptions,
   type DockerRunResult,
+  dockerCapture,
+  dockerRun,
 } from "./run";
 
 function splitNonEmptyLines(output: string): string[] {

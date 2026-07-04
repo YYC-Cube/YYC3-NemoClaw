@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
 // SPDX-License-Identifier: Apache-2.0
 
-import { execFileSync, spawn, spawnSync, type ExecFileSyncOptionsWithStringEncoding } from "node:child_process";
+import { type ExecFileSyncOptionsWithStringEncoding, execFileSync, spawn, spawnSync } from "node:child_process";
 
 export type DockerExecFileSyncOptions = Omit<ExecFileSyncOptionsWithStringEncoding, "encoding">;
 export type DockerSpawnSyncOptions = Parameters<typeof spawnSync>[2];

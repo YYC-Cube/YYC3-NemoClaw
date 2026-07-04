@@ -16,7 +16,7 @@
  * Ref: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/2381
  */
 
-import { TOKEN_PREFIX_PATTERNS, SECRET_PATTERNS } from "./secret-patterns";
+import { SECRET_PATTERNS, TOKEN_PREFIX_PATTERNS } from "./secret-patterns";
 
 // ── Partial redaction (runner.ts style) ─────────────────────────
 

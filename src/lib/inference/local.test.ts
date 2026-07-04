@@ -1,11 +1,11 @@
 // SPDX-FileCopyrightText: Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
 // SPDX-License-Identifier: Apache-2.0
 
-import { afterAll, afterEach, beforeAll, describe, it, expect } from "vitest";
 import { execFileSync } from "node:child_process";
 import { chmodSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import os from "node:os";
 import path from "node:path";
+import { afterAll, afterEach, beforeAll, describe, expect, it } from "vitest";
 
 // Import from compiled dist/ for correct coverage attribution.
 import { OLLAMA_MODEL_REGISTRY } from "../../../dist/lib/inference/ollama-model-registry";
@@ -16,30 +16,31 @@ import { OLLAMA_MODEL_REGISTRY } from "../../../dist/lib/inference/ollama-model-
 const LARGE_OLLAMA_FIT_MEMORY_MB = Math.max(
   ...OLLAMA_MODEL_REGISTRY.map((entry) => entry.requiredMemoryMB),
 );
+
 import {
   CONTAINER_REACHABILITY_IMAGE,
   DEFAULT_OLLAMA_MODEL,
-  LOCAL_INFERENCE_SANDBOX_HOST_URL_ENV,
-  QWEN3_6_OLLAMA_MODEL,
-  getOllamaContainerPort,
-  resetOllamaContainerPortCache,
-  getDefaultOllamaModel,
   getBootstrapOllamaModelOptions,
+  getDefaultOllamaModel,
   getLocalProviderBaseUrl,
   getLocalProviderContainerReachabilityCheck,
   getLocalProviderHealthCheck,
   getLocalProviderHealthEndpoint,
   getLocalProviderLabel,
   getLocalProviderValidationBaseUrl,
+  getOllamaContainerPort,
   getOllamaModelOptions,
   getOllamaProbeCommand,
   getOllamaWarmupCommand,
   isOllamaRunnerCrash,
+  LOCAL_INFERENCE_SANDBOX_HOST_URL_ENV,
   parseOllamaList,
   parseOllamaTags,
   probeLocalProviderHealth,
-  validateOllamaModel,
+  QWEN3_6_OLLAMA_MODEL,
+  resetOllamaContainerPortCache,
   validateLocalProvider,
+  validateOllamaModel,
 } from "../../../dist/lib/inference/local";
 
 describe("local inference helpers", () => {

@@ -2,9 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { Args } from "@oclif/core";
-import { NemoClawCommand } from "../../../lib/cli/nemoclaw-oclif-command";
-
 import { runSetupDnsProxy } from "../../../lib/actions/dns";
+import { NemoClawCommand } from "../../../lib/cli/nemoclaw-oclif-command";
 
 export default class InternalDnsSetupProxyCommand extends NemoClawCommand {
   static hidden = true;

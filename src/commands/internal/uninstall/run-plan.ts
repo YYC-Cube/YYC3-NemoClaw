@@ -2,10 +2,9 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { Flags } from "@oclif/core";
-import { NemoClawCommand } from "../../../lib/cli/nemoclaw-oclif-command";
-
 import { runUninstallPlan } from "../../../lib/actions/uninstall/run-plan";
 import { CLI_DISPLAY_NAME, CLI_NAME } from "../../../lib/cli/branding";
+import { NemoClawCommand } from "../../../lib/cli/nemoclaw-oclif-command";
 
 export default class InternalUninstallRunPlanCommand extends NemoClawCommand {
   static hidden = true;

@@ -9,6 +9,7 @@ import {
   captureOpenshellForStatus,
   isCommandTimeout,
 } from "../../adapters/openshell/runtime";
+import { withStdoutRedirectedToStderr } from "../../cli/stdout-guard";
 import { parseGatewayInference } from "../../inference/config";
 import {
   type ProviderHealthProbeOptions,
@@ -18,7 +19,6 @@ import {
 import { parseSandboxPhase } from "../../state/gateway";
 import * as registry from "../../state/registry";
 import { getSandboxDockerRuntime } from "./docker-health";
-import { withStdoutRedirectedToStderr } from "../../cli/stdout-guard";
 import type { SandboxGatewayState } from "./gateway-state";
 import {
   getReconciledSandboxGatewayState,

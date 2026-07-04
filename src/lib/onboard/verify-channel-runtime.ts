@@ -11,8 +11,8 @@
 
 import type { AgentDefinition } from "../agent/defs";
 import {
-  probeChannelRuntimeStatus,
   type ChannelRuntimeStatusDeps,
+  probeChannelRuntimeStatus,
   type RuntimeChannelStatus,
 } from "../channel-runtime-status";
 import { executeSandboxCommandForVerification } from "./sandbox-verification-exec";

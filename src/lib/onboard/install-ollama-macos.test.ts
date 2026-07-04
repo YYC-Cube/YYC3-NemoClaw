@@ -4,8 +4,8 @@
 import { describe, expect, it, vi } from "vitest";
 
 import {
-  installOllamaOnMacOS,
   type InstallOllamaMacOSOptions,
+  installOllamaOnMacOS,
 } from "../../../dist/lib/onboard/install-ollama-macos";
 
 function makeOpts(overrides: Partial<InstallOllamaMacOSOptions>): InstallOllamaMacOSOptions {

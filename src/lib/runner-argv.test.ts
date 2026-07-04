@@ -1,8 +1,8 @@
 // SPDX-FileCopyrightText: Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
 // SPDX-License-Identifier: Apache-2.0
 
-import { describe, it, expect } from "vitest";
 import { createRequire } from "module";
+import { describe, expect, it } from "vitest";
 
 const require = createRequire(import.meta.url);
 const runner = require("../../dist/lib/runner");
@@ -176,6 +176,91 @@ describe("runCapture with argv array", () => {
   it("returns empty string for missing executables with ignoreError", () => {
     const output = runner.runCapture(["nonexistent-binary-xyz-12345"], { ignoreError: true });
     expect(output).toBe("");
+  });
+});
+
+describe("runFile", () => {
+  it("runs a program by file path with args", () => {
+    const result = runner.runFile(process.execPath, ["-e", "process.exit(0)"], {
+      suppressOutput: true,
+    });
+    expect(result.status).toBe(0);
+  });
+
+  it("throws when shell: true is passed", () => {
+    expect(() => runner.runFile("/bin/echo", ["hi"], { shell: true })).toThrow(
+      /does not allow opts\.shell=true/,
+    );
+  });
+
+  it("converts non-string args to strings", () => {
+    const result = runner.runFile("/bin/echo", [42, true, "hello"], {
+      suppressOutput: true,
+    });
+    expect(result.status).toBe(0);
+  });
+});
+
+describe("runCaptureEx", () => {
+  it("returns structured result with stdout on success", () => {
+    const result = runner.runCaptureEx(["/bin/echo", "hello world"]);
+    expect(result.stdout).toBe("hello world");
+    expect(result.exitCode).toBe(0);
+    expect(result.timedOut).toBe(false);
+  });
+
+  it("throws on empty argv array", () => {
+    expect(() => runner.runCaptureEx([])).toThrow(/must be a non-empty/);
+  });
+
+  it("returns stderr when available", () => {
+    const result = runner.runCaptureEx([
+      process.execPath,
+      "-e",
+      'process.stderr.write("error msg\\n"); process.stdout.write("output"); process.exit(0);',
+    ]);
+    // stderr may be empty or contain the message depending on capture
+    expect(typeof result.stderr).toBe("string");
+    expect(result.stdout).toBe("output");
+  });
+
+  it("captures non-zero exit code", () => {
+    const result = runner.runCaptureEx(["sh", "-c", "exit 42"]);
+    expect(result.exitCode).toBe(42);
+  });
+});
+
+describe("validateName", () => {
+  it("accepts valid RFC 1123 names", () => {
+    expect(runner.validateName("my-sandbox")).toBe("my-sandbox");
+    expect(runner.validateName("sandbox-123")).toBe("sandbox-123");
+    expect(runner.validateName("a")).toBe("a");
+  });
+
+  it("rejects empty name", () => {
+    expect(() => runner.validateName("")).toThrow(/required/);
+    expect(() => runner.validateName(" ", "label")).toThrow(/Invalid/);
+  });
+
+  it("rejects overly long names", () => {
+    const longName = "a".repeat(300);
+    expect(() => runner.validateName(longName)).toThrow(/too long/);
+  });
+
+  it("rejects names with shell metacharacters", () => {
+    expect(() => runner.validateName("bad;name")).toThrow(/Invalid/);
+    expect(() => runner.validateName("bad$(whoami)")).toThrow(/Invalid/);
+    expect(() => runner.validateName("bad`id`")).toThrow(/Invalid/);
+    expect(() => runner.validateName("bad&name")).toThrow(/Invalid/);
+    expect(() => runner.validateName("bad|name")).toThrow(/Invalid/);
+  });
+
+  it("rejects names with path traversal", () => {
+    expect(() => runner.validateName("../etc")).toThrow(/Invalid/);
+  });
+
+  it("uses custom label in error messages", () => {
+    expect(() => runner.validateName("", "sandbox")).toThrow(/sandbox/);
   });
 });
 

@@ -19,7 +19,7 @@
  * in `src/lib/actions/uninstall/run-plan.ts`.
  */
 
-import { spawnSync, type SpawnSyncOptions } from "node:child_process";
+import { type SpawnSyncOptions, spawnSync } from "node:child_process";
 import os from "node:os";
 
 import { DASHBOARD_PORT_RANGE_END, DASHBOARD_PORT_RANGE_START } from "../core/ports";

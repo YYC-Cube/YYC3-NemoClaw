@@ -1,10 +1,10 @@
 // SPDX-FileCopyrightText: Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
 // SPDX-License-Identifier: Apache-2.0
 
-import { spawn, spawnSync } from "node:child_process";
 import type { ChildProcess } from "node:child_process";
-import { existsSync, readdirSync, readFileSync, statSync, watch } from "node:fs";
+import { spawn, spawnSync } from "node:child_process";
 import type { FSWatcher } from "node:fs";
+import { existsSync, readdirSync, readFileSync, statSync, watch } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 

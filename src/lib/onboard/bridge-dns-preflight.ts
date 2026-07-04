@@ -75,6 +75,7 @@ function printDaemonJsonDnsPatch(opts: DaemonJsonDnsPatchOpts): void {
   ].join(" ");
   console.error(`${indent}${sudoPrefix}sh -c '${shBody.replace(/'/g, "'\"'\"'")}'`);
 }
+
 import {
   BUSYBOX_PROBE_IMAGE,
   DOCKER_DESKTOP_WSL_INTEGRATION_HINT,

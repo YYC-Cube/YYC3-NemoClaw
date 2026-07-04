@@ -160,7 +160,7 @@ function privilegedSandboxExecArgv(
 
 export {
   containerNameMatchesSandbox,
-  selectDirectSandboxContainer,
-  resolveDirectSandboxContainer,
   privilegedSandboxExecArgv,
+  resolveDirectSandboxContainer,
+  selectDirectSandboxContainer,
 };

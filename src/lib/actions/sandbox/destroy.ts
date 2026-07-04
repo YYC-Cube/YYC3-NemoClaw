@@ -19,8 +19,8 @@ import {
   shouldCleanupGatewayAfterDestroy,
   shouldStopHostServicesAfterDestroy,
 } from "../../domain/sandbox/destroy";
-import { stopStaleDashboardListeners } from "../../onboard/stale-gateway-cleanup";
 import { stopHostGatewayProcesses } from "../../onboard/host-gateway-process";
+import { stopStaleDashboardListeners } from "../../onboard/stale-gateway-cleanup";
 import { parseLiveSandboxNames } from "../../runtime-recovery";
 import { killTimer as defaultKillShieldsTimer } from "../../shields/timer-control";
 import type { Session } from "../../state/onboard-session";

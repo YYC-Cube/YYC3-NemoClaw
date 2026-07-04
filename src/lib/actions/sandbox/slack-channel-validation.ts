@@ -1,11 +1,11 @@
 // SPDX-FileCopyrightText: Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { ChannelDef } from "../../sandbox/channels";
 import {
   formatSlackValidationFailure,
   validateSlackCredentials,
 } from "../../onboard/slack-validation";
+import type { ChannelDef } from "../../sandbox/channels";
 
 export type SlackChannelCredentialValidationResult =
   | { ok: true; message?: string }

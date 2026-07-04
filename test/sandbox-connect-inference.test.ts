@@ -44,6 +44,14 @@ function isHostWsl() {
   );
 }
 
+function isCliBuilt(): boolean {
+  // These integration tests spawn the real CLI binary. Skip them when the
+  // CLI dist hasn't been built (e.g., fresh clone without `npm run build:cli`).
+  // CI always builds before running tests, so this guard only affects local runs.
+  const repoRoot = path.join(import.meta.dirname, "..");
+  return fs.existsSync(path.join(repoRoot, "dist", "lib", "cli", "oclif-runner.js"));
+}
+
 function setupFixture(
   sandboxEntry: SandboxEntryFixture,
   liveInferenceProvider: string | null,
@@ -393,7 +401,7 @@ function runConnect(
   );
 }
 
-describe("sandbox connect inference route swap (#1248)", () => {
+describe.runIf(isCliBuilt())("sandbox connect inference route swap (#1248)", () => {
   it(
     "skips the vLLM model preflight on connect --probe-only but keeps it for a full connect (#4585)",
     testTimeoutOptions(20_000),
@@ -1288,7 +1296,7 @@ describe("sandbox connect inference route swap (#1248)", () => {
   );
 });
 
-describe("sandbox connect auto-pair approval pass (#4263)", () => {
+describe.runIf(isCliBuilt())("sandbox connect auto-pair approval pass (#4263)", () => {
   it(
     "runs a bounded openclaw devices approval pass before opening SSH",
     testTimeoutOptions(20_000),

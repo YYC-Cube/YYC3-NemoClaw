@@ -1,9 +1,9 @@
 // SPDX-FileCopyrightText: Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
 // SPDX-License-Identifier: Apache-2.0
 
-import { getSandboxInventory, renderSandboxInventoryText } from "../lib/inventory";
 import { NemoClawCommand } from "../lib/cli/nemoclaw-oclif-command";
 import { withStdoutRedirectedToStderr } from "../lib/cli/stdout-guard";
+import { getSandboxInventory, renderSandboxInventoryText } from "../lib/inventory";
 import { buildListCommandDeps } from "../lib/list-command-deps";
 
 export default class ListCommand extends NemoClawCommand {

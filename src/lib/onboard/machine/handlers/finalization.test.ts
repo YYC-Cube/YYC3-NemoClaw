@@ -4,7 +4,7 @@
 import { describe, expect, it, vi } from "vitest";
 
 import { createSession, type SessionUpdates } from "../../../state/onboard-session";
-import { handleFinalizationState, type FinalizationStateOptions } from "./finalization";
+import { type FinalizationStateOptions, handleFinalizationState } from "./finalization";
 
 type Agent = { name: string } | null;
 type VerifyChain = { port: number };

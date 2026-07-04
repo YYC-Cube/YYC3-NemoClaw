@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import type { JsonObject } from "../../core/json-types";
-import * as onboardSession from "../../state/onboard-session";
 import type { Session, SessionUpdates } from "../../state/onboard-session";
+import * as onboardSession from "../../state/onboard-session";
 import type { ResumeConfigConflict } from "../resume-config";
 import {
   createOnboardMachineEvent,

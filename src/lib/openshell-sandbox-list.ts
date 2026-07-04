@@ -1,8 +1,8 @@
 // SPDX-FileCopyrightText: Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
 // SPDX-License-Identifier: Apache-2.0
 
-import { detectOpenShellStateRpcResultIssue } from "./adapters/openshell/gateway-drift";
 import { stripAnsi } from "./adapters/openshell/client";
+import { detectOpenShellStateRpcResultIssue } from "./adapters/openshell/gateway-drift";
 import { captureOpenshell } from "./adapters/openshell/runtime";
 import { recoverNamedGatewayRuntime } from "./gateway-runtime-action";
 

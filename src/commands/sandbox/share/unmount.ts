@@ -3,9 +3,8 @@
 
 import { Args } from "@oclif/core";
 import { NemoClawCommand } from "../../../lib/cli/nemoclaw-oclif-command";
-
-import { runShareUnmount, ShareCommandError } from "../../../lib/share-command";
 import { sandboxNameArg } from "../../../lib/sandbox/command-support";
+import { runShareUnmount, ShareCommandError } from "../../../lib/share-command";
 
 export default class ShareUnmountCommand extends NemoClawCommand {
   static id = "sandbox:share:unmount";

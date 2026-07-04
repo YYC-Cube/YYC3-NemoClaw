@@ -52,4 +52,4 @@ export function appendAuditEntry(entry: ShieldsAuditEntry): void {
   appendFileSync(AUDIT_FILE, JSON.stringify(safe) + "\n", { mode: 0o600 });
 }
 
-export { AUDIT_FILE, AUDIT_DIR };
+export { AUDIT_DIR, AUDIT_FILE };

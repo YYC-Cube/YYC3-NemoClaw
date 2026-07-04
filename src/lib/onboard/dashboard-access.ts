@@ -1,10 +1,10 @@
 // SPDX-FileCopyrightText: Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { WslDetectionOptions } from "../platform";
-import { isWsl } from "../platform";
 import { DASHBOARD_PORT } from "../core/ports";
 import { buildChain, buildControlUiUrls } from "../dashboard/contract";
+import type { WslDetectionOptions } from "../platform";
+import { isWsl } from "../platform";
 
 type RunCapture = (args: string[], options: { ignoreError: true }) => string;
 type OpenshellShellCommand = (args: string[], options?: { openshellBinary?: string }) => string;

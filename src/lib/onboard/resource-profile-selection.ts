@@ -5,8 +5,8 @@ import {
   appendResourceFlags,
   getHardwareResources,
   loadResourceProfiles,
-  resolveResourceValue,
   type ResourceProfile,
+  resolveResourceValue,
 } from "../resources-cmd";
 
 export type ResourceProfileSelectionDeps = {

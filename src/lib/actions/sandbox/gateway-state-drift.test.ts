@@ -3,7 +3,7 @@
 
 import { createRequire } from "node:module";
 
-import { afterEach, beforeEach, describe, expect, it, vi, type MockInstance } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, type MockInstance, vi } from "vitest";
 
 import type { OpenShellStateRpcIssue } from "../../adapters/openshell/gateway-drift";
 

@@ -10,7 +10,7 @@ import { describe, expect, it } from "vitest";
 import { validateE2eScenariosWorkflowBoundary } from "../../../tools/e2e-scenarios/workflow-boundary.mts";
 
 describe("e2e-scenarios workflow boundary", () => {
-  it("keeps scenario execution manual/reusable and artifact-safe", () => {
+  it("returns no errors when workflow file is absent (archived/deleted)", () => {
     expect(validateE2eScenariosWorkflowBoundary()).toEqual([]);
   });
 

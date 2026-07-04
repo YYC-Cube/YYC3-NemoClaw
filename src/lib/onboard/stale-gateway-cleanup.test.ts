@@ -5,9 +5,9 @@ import { describe, expect, it, vi } from "vitest";
 
 import {
   getProtectedDashboardPortsForSandbox,
-  stopStaleDashboardListeners,
   type RunResult,
   type StaleGatewayDeps,
+  stopStaleDashboardListeners,
 } from "./stale-gateway-cleanup";
 
 interface RunArgs {

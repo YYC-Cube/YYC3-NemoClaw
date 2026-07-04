@@ -16,18 +16,18 @@ import YAML from "yaml";
 
 import { isRecord } from "./core/json-types";
 import { validateSkillName } from "./skill-name";
-import { shellQuote, sshExec } from "./skill-remote";
 import type { SshContext, SshResult } from "./skill-remote";
+import { shellQuote, sshExec } from "./skill-remote";
 
 export { validateSkillName } from "./skill-name";
 export {
   checkExisting,
   type RemoveResult,
   removeSkill,
-  shellQuote,
-  sshExec,
   type SshContext,
   type SshResult,
+  shellQuote,
+  sshExec,
   verifyRemove,
 } from "./skill-remote";
 

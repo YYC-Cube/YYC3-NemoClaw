@@ -1,18 +1,18 @@
 // SPDX-FileCopyrightText: Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
 // SPDX-License-Identifier: Apache-2.0
 
-import { describe, it, expect } from "vitest";
-import { mkdtempSync, writeFileSync, mkdirSync, rmSync } from "node:fs";
-import { join } from "node:path";
+import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
+import { join } from "node:path";
+import { describe, expect, it } from "vitest";
 // Import from compiled dist/ so coverage is attributed correctly.
 import {
-  parseFrontmatter,
-  resolveSkillPaths,
   collectFiles,
+  parseFrontmatter,
   postInstall,
-  validateRelativePath,
+  resolveSkillPaths,
   shellQuote,
+  validateRelativePath,
 } from "../../dist/lib/skill-install";
 
 describe("parseFrontmatter", () => {

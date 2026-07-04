@@ -190,17 +190,17 @@ function killTimer(sandboxName: string): KillTimerResult {
   };
 }
 
-export {
-  timerMarkerPath,
-  readTimerMarker,
-  clearTimerMarker,
-  isProcessAlive,
-  verifyTimerMarkerIdentity,
-  killTimer,
-};
 
 export type {
-  TimerMarker,
   ClearTimerMarkerResult,
   KillTimerResult,
+  TimerMarker,
+};
+export {
+  clearTimerMarker,
+  isProcessAlive,
+  killTimer,
+  readTimerMarker,
+  timerMarkerPath,
+  verifyTimerMarkerIdentity,
 };

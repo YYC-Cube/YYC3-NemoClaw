@@ -3,7 +3,7 @@
 //
 // Policy preset management — list, load, merge, and apply presets.
 
-import type { JsonValue, JsonObject } from "../core/json-types";
+import type { JsonObject, JsonValue } from "../core/json-types";
 
 const fs = require("fs");
 const path = require("path");
@@ -1299,35 +1299,35 @@ function applyPermissivePolicy(sandboxName: string): void {
 }
 
 export {
-  PRESETS_DIR,
-  PERMISSIVE_POLICY_PATH,
-  listPresets,
-  loadPreset,
-  getPresetEndpoints,
-  getPresetValidationWarning,
-  setupPolicyPresetSupported,
-  filterSetupPolicyPresets,
-  listSetupPolicyPresets,
+  applyPermissivePolicy,
+  applyPreset,
+  applyPresetContent,
+  applyPresets,
+  assertOpenshellResolvable,
+  buildPolicyGetCommand,
+  buildPolicySetCommand,
   clampSetupPolicyPresetNames,
   extractPresetEntries,
-  parsePresetPolicyKeys,
-  parseCurrentPolicy,
-  buildPolicySetCommand,
-  buildPolicyGetCommand,
-  assertOpenshellResolvable,
-  mergePresetIntoPolicy,
-  mergePresetNamesIntoPolicy,
-  removePresetFromPolicy,
-  applyPreset,
-  applyPresets,
-  applyPresetContent,
-  loadPresetFromFile,
-  removePreset,
-  applyPermissivePolicy,
-  resolvePermissivePolicyPath,
+  filterSetupPolicyPresets,
   getAppliedPresets,
   getGatewayPresets,
+  getPresetEndpoints,
+  getPresetValidationWarning,
   listCustomPresets,
-  selectFromList,
+  listPresets,
+  listSetupPolicyPresets,
+  loadPreset,
+  loadPresetFromFile,
+  mergePresetIntoPolicy,
+  mergePresetNamesIntoPolicy,
+  PERMISSIVE_POLICY_PATH,
+  PRESETS_DIR,
+  parseCurrentPolicy,
+  parsePresetPolicyKeys,
+  removePreset,
+  removePresetFromPolicy,
+  resolvePermissivePolicyPath,
   selectForRemoval,
+  selectFromList,
+  setupPolicyPresetSupported,
 };

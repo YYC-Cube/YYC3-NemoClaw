@@ -68,17 +68,17 @@ vi.mock("../../lib/shields", () => ({
   shieldsUp: mocks.shieldsUp,
 }));
 
-import ConnectCliCommand from "./connect";
+import SandboxChannelsListCommand from "./channels/list";
 import SandboxConfigGetCommand from "./config/get";
+import ConnectCliCommand from "./connect";
 import DestroyCliCommand from "./destroy";
 import SandboxDoctorCliCommand from "./doctor";
-import SandboxChannelsListCommand from "./channels/list";
 import SandboxPolicyListCommand from "./policy/list";
 import RebuildCliCommand from "./rebuild";
-import SandboxStatusCommand from "./status";
 import ShieldsDownCommand from "./shields/down";
 import ShieldsStatusCommand from "./shields/status";
 import ShieldsUpCommand from "./shields/up";
+import SandboxStatusCommand from "./status";
 
 const rootDir = process.cwd();
 

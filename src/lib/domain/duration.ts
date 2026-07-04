@@ -55,4 +55,4 @@ export function parseDuration(input: string): number {
   return seconds;
 }
 
-export { MAX_SECONDS, DEFAULT_SECONDS };
+export { DEFAULT_SECONDS, MAX_SECONDS };

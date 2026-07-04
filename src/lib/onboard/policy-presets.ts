@@ -7,6 +7,7 @@ import type { WebSearchConfig } from "../inference/web-search";
 const { LOCAL_INFERENCE_PROVIDERS } = require("./providers") as {
   LOCAL_INFERENCE_PROVIDERS: string[];
 };
+
 import {
   isOpenclawAgent,
   requiredOpenclawOtelPolicyPresets,

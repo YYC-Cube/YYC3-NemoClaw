@@ -2,24 +2,24 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import type {
+  MessagingHookInputMap,
+  MessagingHookOutputMap,
+  MessagingHookRunResult,
+} from "../hooks";
+import { MessagingHookRegistry, runMessagingHook } from "../hooks";
+import type {
   ChannelHookSpec,
   ChannelInputSpec,
   ChannelManifest,
   ChannelManifestRegistry,
   MessagingChannelId,
-  MessagingStatePath,
   MessagingSerializableValue,
+  MessagingStatePath,
   SandboxMessagingChannelPlan,
   SandboxMessagingHookReferencePlan,
   SandboxMessagingInputReference,
   SandboxMessagingPlan,
 } from "../manifest";
-import { MessagingHookRegistry, runMessagingHook } from "../hooks";
-import type {
-  MessagingHookInputMap,
-  MessagingHookOutputMap,
-  MessagingHookRunResult,
-} from "../hooks";
 import { planAgentRender } from "./engines/agent-render-engine";
 import { planBuildSteps } from "./engines/build-step-engine";
 import { planCredentialBindings } from "./engines/credential-binding-engine";

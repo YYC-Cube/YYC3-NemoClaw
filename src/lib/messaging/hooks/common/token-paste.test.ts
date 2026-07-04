@@ -7,8 +7,8 @@ import { slackManifest, telegramManifest } from "../../channels";
 import { runMessagingHook } from "../hook-runner";
 import { MessagingHookRegistry } from "../registry";
 import {
-  COMMON_TOKEN_PASTE_HOOK_HANDLER_ID,
   COMMON_HOOK_REGISTRATIONS,
+  COMMON_TOKEN_PASTE_HOOK_HANDLER_ID,
   createTokenPasteHook,
 } from "./token-paste";
 

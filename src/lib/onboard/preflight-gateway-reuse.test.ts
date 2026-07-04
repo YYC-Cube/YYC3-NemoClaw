@@ -2,12 +2,11 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { describe, expect, it, vi } from "vitest";
-
-import type { GatewayContainerState } from "./gateway-container-running";
 import type { GatewayReuseState } from "../state/gateway";
+import type { GatewayContainerState } from "./gateway-container-running";
 import {
-  reconcilePreflightGatewayReuseState,
   type PreflightGatewayReuseDeps,
+  reconcilePreflightGatewayReuseState,
 } from "./preflight-gateway-reuse";
 
 function makeDeps(

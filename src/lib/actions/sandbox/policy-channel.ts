@@ -5,12 +5,13 @@
 import fs from "node:fs";
 import path from "node:path";
 
-import { loadAgent, type AgentDefinition } from "../../agent/defs";
+import { type AgentDefinition, loadAgent } from "../../agent/defs";
 import { CLI_DISPLAY_NAME, CLI_NAME } from "../../cli/branding";
 import { prompt as askPrompt, getCredential } from "../../credentials/store";
 import { recoverNamedGatewayRuntime } from "../../gateway-runtime-action";
 import * as policies from "../../policy";
 import { hashCredential } from "../../security/credential-hash";
+
 const { isNonInteractive } = require("../../onboard") as { isNonInteractive: () => boolean };
 const onboardProviders = require("../../onboard/providers");
 // Lazy-required: keeps qrcode-terminal + the iLink HTTP client out of the
@@ -20,13 +21,14 @@ const onboardSession = require("../../state/onboard-session") as typeof import("
 
 import { runOpenshell } from "../../adapters/openshell/runtime";
 import {
-  parsePolicyAddOptions,
   type PolicyAddOptions,
   type PolicyRemoveOptions,
+  parsePolicyAddOptions,
 } from "../../domain/policy-channel";
 import type { HostQrLoginResult } from "../../host-qr-handlers";
 import { shellQuote } from "../../runner";
 import {
+  type ChannelDef,
   channelUsesInSandboxQrPairing,
   clearChannelTokens,
   getChannelDef,
@@ -34,7 +36,6 @@ import {
   KNOWN_CHANNELS,
   knownChannelNames,
   persistChannelTokens,
-  type ChannelDef,
 } from "../../sandbox/channels";
 import * as registry from "../../state/registry";
 import {

@@ -3,9 +3,8 @@
 
 import { Config as OclifConfig } from "@oclif/core";
 import { describe, expect, it } from "vitest";
-
-import { getRegisteredOclifCommandsMetadata } from "./oclif-metadata";
 import { COMMANDS, visibleCommands } from "./command-registry";
+import { getRegisteredOclifCommandsMetadata } from "./oclif-metadata";
 
 describe("public command display metadata", () => {
   it("loads public display entries for root help and docs checks", () => {

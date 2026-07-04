@@ -3,7 +3,7 @@
 
 import type { CaptureOpenshellResult } from "../adapters/openshell/client";
 import { stripAnsi } from "../adapters/openshell/client";
-import { parseGatewayInference, type GatewayInference } from "./config";
+import { type GatewayInference, parseGatewayInference } from "./config";
 
 type CaptureLiveInference = (
   args: string[],

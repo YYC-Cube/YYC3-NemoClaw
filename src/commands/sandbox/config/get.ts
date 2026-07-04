@@ -3,9 +3,8 @@
 
 import { Flags } from "@oclif/core";
 import { NemoClawCommand } from "../../../lib/cli/nemoclaw-oclif-command";
-
-import * as sandboxConfig from "../../../lib/sandbox/config";
 import { sandboxNameArg } from "../../../lib/sandbox/command-support";
+import * as sandboxConfig from "../../../lib/sandbox/config";
 
 export default class SandboxConfigGetCommand extends NemoClawCommand {
   static id = "sandbox:config:get";

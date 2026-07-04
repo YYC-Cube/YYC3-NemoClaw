@@ -5,11 +5,10 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
-
+import { getVersion } from "./core/version";
 import { parseDuration } from "./domain/duration";
 import { parseGatewayTokenArgs, runGatewayTokenCommand } from "./gateway-token-command";
 import { resolveDefaultSandboxName, runStartCommand, runStopCommand } from "./tunnel/service-command";
-import { getVersion } from "./core/version";
 
 // Narrow coverage guard for small helper modules that are otherwise only
 // exercised through subprocess CLI flows in this migration stack.

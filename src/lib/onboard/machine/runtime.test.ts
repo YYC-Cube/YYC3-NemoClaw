@@ -7,9 +7,9 @@ import {
   createSession,
   filterSafeUpdates,
   normalizeSession,
-  sanitizeFailure,
   type Session,
   type SessionUpdates,
+  sanitizeFailure,
 } from "../../state/onboard-session";
 import type { OnboardMachineEvent } from "./events";
 import {

@@ -6,9 +6,9 @@
  * creation failures.
  */
 
-import { CLI_NAME } from "./cli/branding";
 import fs from "node:fs";
 import path from "node:path";
+import { CLI_NAME } from "./cli/branding";
 
 import { classifySandboxCreateFailure } from "./validation";
 

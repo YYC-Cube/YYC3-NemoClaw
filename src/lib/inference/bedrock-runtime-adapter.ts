@@ -23,9 +23,18 @@ import {
   resolveBedrockRuntimeRegion,
 } from "./bedrock-runtime";
 import {
-  DEFAULT_LOCAL_ADAPTER_STATE_DIR,
+  AdapterHttpError,
+  type BedrockRuntimeClientLike,
+  createOpenAiChatCompletion,
+  type OpenAiChatRequest,
+  parseJsonObject,
+  streamOpenAiChatCompletion,
+} from "./bedrock-runtime-translation";
+import {
   appendLocalAdapterJsonLine,
+  DEFAULT_LOCAL_ADAPTER_STATE_DIR,
   isLocalAdapterProcess,
+  type JsonObject,
   killLocalAdapterPid,
   loadLocalAdapterPid,
   localAdapterTokenHash,
@@ -37,16 +46,7 @@ import {
   waitForLocalAdapterHealth,
   writeLocalAdapterJsonFile,
   writeLocalAdapterSecretFile,
-  type JsonObject,
 } from "./local-adapter-lifecycle";
-import {
-  AdapterHttpError,
-  createOpenAiChatCompletion,
-  parseJsonObject,
-  streamOpenAiChatCompletion,
-  type BedrockRuntimeClientLike,
-  type OpenAiChatRequest,
-} from "./bedrock-runtime-translation";
 
 export {
   AdapterHttpError,

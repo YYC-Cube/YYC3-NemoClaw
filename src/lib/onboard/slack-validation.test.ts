@@ -4,9 +4,8 @@
 import fs from "node:fs";
 
 import { beforeEach, describe, expect, it, vi } from "vitest";
-
-import type { ProbeResult } from "./types";
 import { KNOWN_CHANNELS } from "../sandbox/channels";
+import type { ProbeResult } from "./types";
 
 vi.mock("../adapters/http/probe", () => ({
   runCurlProbe: vi.fn(),

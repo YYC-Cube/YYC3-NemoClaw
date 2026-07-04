@@ -174,4 +174,4 @@ function resolveTierPresets(
   return presets;
 }
 
-export { TIERS_FILE, listTiers, getTier, resolveTierPresets };
+export { getTier, listTiers, resolveTierPresets, TIERS_FILE };

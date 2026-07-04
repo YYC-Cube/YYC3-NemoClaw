@@ -2,9 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { Args } from "@oclif/core";
-import { NemoClawCommand } from "../lib/cli/nemoclaw-oclif-command";
-
 import { runDeployAction } from "../lib/actions/global";
+import { NemoClawCommand } from "../lib/cli/nemoclaw-oclif-command";
 
 export default class DeployCliCommand extends NemoClawCommand {
   static id = "deploy";

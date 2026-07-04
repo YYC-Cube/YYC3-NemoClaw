@@ -6,8 +6,8 @@ import { describe, expect, it } from "vitest";
 import { createBuiltInChannelManifestRegistry } from "../channels";
 import { createBuiltInMessagingHookRegistry, MessagingHookRegistry } from "../hooks";
 import {
-  ChannelManifestRegistry,
   type ChannelManifest,
+  ChannelManifestRegistry,
   type SandboxMessagingPlan,
 } from "../manifest";
 import { ManifestCompiler } from "./manifest-compiler";

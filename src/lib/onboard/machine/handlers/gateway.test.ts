@@ -2,11 +2,10 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { describe, expect, it, vi } from "vitest";
-
+import type { GatewayReuseState } from "../../../state/gateway";
 import { createSession, type Session } from "../../../state/onboard-session";
 import type { GatewayContainerState } from "../../gateway-container-running";
-import type { GatewayReuseState } from "../../../state/gateway";
-import { handleGatewayState, type GatewayStateOptions } from "./gateway";
+import { type GatewayStateOptions, handleGatewayState } from "./gateway";
 
 type Gpu = { type: string } | null;
 

@@ -21,7 +21,14 @@
  * @author YYC³ Team
  */
 
-import { I18nEngine, MCPServer, OllamaProvider, QualityEstimator, registerI18nTools, StdioTransport } from "@yyc3/i18n-core";
+import {
+  I18nEngine,
+  MCPServer,
+  OllamaProvider,
+  QualityEstimator,
+  registerI18nTools,
+  StdioTransport,
+} from "@yyc3/i18n-core";
 
 // ============================================================
 // 配置 — 可通过环境变量覆盖
@@ -29,7 +36,7 @@ import { I18nEngine, MCPServer, OllamaProvider, QualityEstimator, registerI18nTo
 
 const OLLAMA_ENDPOINT = process.env.I18N_OLLAMA_ENDPOINT || "http://127.0.0.1:11434";
 const OLLAMA_MODEL = process.env.I18N_OLLAMA_MODEL || "qwen3.6:35b-a3b";
-const FALLBACK_MODEL = process.env.I18N_FALLBACK_MODEL || "qwen3.6:35b-a3b";
+const _FALLBACK_MODEL = process.env.I18N_FALLBACK_MODEL || "qwen3.6:35b-a3b";
 const MCP_SERVER_NAME = process.env.I18N_MCP_SERVER_NAME || "yyc3-i18n";
 const MCP_SERVER_VERSION = process.env.I18N_MCP_SERVER_VERSION || "1.0.0";
 
@@ -113,17 +120,23 @@ server.registerTool(
       // Fallback: use dictionary translation
       const result = engine.t(args.text);
       return {
-        content: [{
-          type: "text",
-          text: JSON.stringify({
-            translatedText: result,
-            qualityScore: 50,
-            provider: "dictionary",
-            model: "built-in",
-            cached: false,
-            warning: "AI provider unavailable, used dictionary fallback",
-          }, null, 2),
-        }],
+        content: [
+          {
+            type: "text",
+            text: JSON.stringify(
+              {
+                translatedText: result,
+                qualityScore: 50,
+                provider: "dictionary",
+                model: "built-in",
+                cached: false,
+                warning: "AI provider unavailable, used dictionary fallback",
+              },
+              null,
+              2,
+            ),
+          },
+        ],
       };
     }
 
@@ -137,24 +150,32 @@ server.registerTool(
       });
 
       return {
-        content: [{
-          type: "text",
-          text: JSON.stringify(response, null, 2),
-        }],
+        content: [
+          {
+            type: "text",
+            text: JSON.stringify(response, null, 2),
+          },
+        ],
       };
     } catch (err) {
       return {
-        content: [{
-          type: "text",
-          text: JSON.stringify({
-            error: err.message,
-            translatedText: String(args.text),
-            qualityScore: 0,
-            provider: "error",
-            model: "none",
-            cached: false,
-          }, null, 2),
-        }],
+        content: [
+          {
+            type: "text",
+            text: JSON.stringify(
+              {
+                error: err.message,
+                translatedText: String(args.text),
+                qualityScore: 0,
+                provider: "error",
+                model: "none",
+                cached: false,
+              },
+              null,
+              2,
+            ),
+          },
+        ],
       };
     }
   },
@@ -188,10 +209,12 @@ server.registerTool(
     });
 
     return {
-      content: [{
-        type: "text",
-        text: JSON.stringify(result, null, 2),
-      }],
+      content: [
+        {
+          type: "text",
+          text: JSON.stringify(result, null, 2),
+        },
+      ],
     };
   },
 );
@@ -234,10 +257,12 @@ server.registerTool(
     }
 
     return {
-      content: [{
-        type: "text",
-        text: JSON.stringify(result, null, 2),
-      }],
+      content: [
+        {
+          type: "text",
+          text: JSON.stringify(result, null, 2),
+        },
+      ],
     };
   },
 );
@@ -272,10 +297,12 @@ server.registerTool(
     };
 
     return {
-      content: [{
-        type: "text",
-        text: JSON.stringify(locales, null, 2),
-      }],
+      content: [
+        {
+          type: "text",
+          text: JSON.stringify(locales, null, 2),
+        },
+      ],
     };
   },
 );
@@ -285,15 +312,23 @@ server.registerTool(
 // ============================================================
 
 // 异步初始化 AI provider（失败不阻塞启动）
-initAIProvider().catch(() => { });
+initAIProvider().catch(() => {});
 
-server.start().then(() => {
-  console.error(`[i18n-mcp] YYC³ i18n MCP Server running (stdio transport)`);
-  console.error(`[i18n-mcp] Tools: ${server.getTools().map(t => t.name).join(", ")}`);
-  if (process.env.I18N_OLLAMA_ENDPOINT) {
-    console.error(`[i18n-mcp] Ollama: ${OLLAMA_MODEL} @ ${OLLAMA_ENDPOINT}`);
-  }
-}).catch((err) => {
-  console.error(`[i18n-mcp] Failed to start: ${err.message}`);
-  process.exit(1);
-});
+server
+  .start()
+  .then(() => {
+    console.error(`[i18n-mcp] YYC³ i18n MCP Server running (stdio transport)`);
+    console.error(
+      `[i18n-mcp] Tools: ${server
+        .getTools()
+        .map((t) => t.name)
+        .join(", ")}`,
+    );
+    if (process.env.I18N_OLLAMA_ENDPOINT) {
+      console.error(`[i18n-mcp] Ollama: ${OLLAMA_MODEL} @ ${OLLAMA_ENDPOINT}`);
+    }
+  })
+  .catch((err) => {
+    console.error(`[i18n-mcp] Failed to start: ${err.message}`);
+    process.exit(1);
+  });

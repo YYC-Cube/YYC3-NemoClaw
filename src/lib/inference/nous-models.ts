@@ -1,11 +1,11 @@
 // SPDX-FileCopyrightText: Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
 // SPDX-License-Identifier: Apache-2.0
 
+import { isSafeModelId } from "../validation";
 import {
   HERMES_PROVIDER_MODEL_OPTIONS,
   NOUS_RECOMMENDED_MODELS_URL,
 } from "./config";
-import { isSafeModelId } from "../validation";
 
 const DEFAULT_FETCH_TIMEOUT_MS = 2500;
 

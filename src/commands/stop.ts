@@ -2,10 +2,9 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { NemoClawCommand } from "../lib/cli/nemoclaw-oclif-command";
-
-import { stopAll } from "../lib/tunnel/services";
-import { runStopCommand } from "../lib/tunnel/service-command";
 import { serviceDeps } from "../lib/tunnel/command-support";
+import { runStopCommand } from "../lib/tunnel/service-command";
+import { stopAll } from "../lib/tunnel/services";
 
 export default class DeprecatedStopCommand extends NemoClawCommand {
   static id = "stop";

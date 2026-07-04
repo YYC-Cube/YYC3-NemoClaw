@@ -5,9 +5,9 @@ import { describe, expect, it } from "vitest";
 
 import {
   classifyUpgradeableSandboxes,
+  type SandboxVersionCheck,
   shouldSkipUpgradeConfirmation,
   splitRebuildableSandboxes,
-  type SandboxVersionCheck,
 } from "./upgrade";
 
 describe("upgrade sandboxes helpers", () => {

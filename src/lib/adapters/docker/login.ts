@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
 // SPDX-License-Identifier: Apache-2.0
 
-import { dockerSpawnSync, type DockerSpawnSyncOptions, type DockerSpawnSyncResult } from "./exec";
+import { type DockerSpawnSyncOptions, type DockerSpawnSyncResult, dockerSpawnSync } from "./exec";
 
 export function dockerLoginPasswordStdin(
   registry: string,

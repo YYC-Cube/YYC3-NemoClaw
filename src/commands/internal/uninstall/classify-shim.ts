@@ -2,10 +2,9 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { Args } from "@oclif/core";
+import { classifyShimPath } from "../../../lib/actions/uninstall/plan";
 import { jsonFlag } from "../../../lib/cli/common-flags";
 import { NemoClawCommand } from "../../../lib/cli/nemoclaw-oclif-command";
-
-import { classifyShimPath } from "../../../lib/actions/uninstall/plan";
 
 export default class InternalUninstallClassifyShimCommand extends NemoClawCommand {
   static hidden = true;

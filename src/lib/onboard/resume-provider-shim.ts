@@ -5,10 +5,10 @@
 // dependencies it needs. Lives outside `src/lib/onboard.ts` so the wiring
 // doesn't count against the entrypoint-budget gate.
 
-import { DEFAULT_ROUTE_CREDENTIAL_ENV } from "../inference/config";
-import { hydrateCredentialEnv } from "./credential-env";
-import { validateNvidiaApiKeyValue } from "../validation";
 import { D, R } from "../cli/terminal-style";
+import { DEFAULT_ROUTE_CREDENTIAL_ENV } from "../inference/config";
+import { validateNvidiaApiKeyValue } from "../validation";
+import { hydrateCredentialEnv } from "./credential-env";
 import {
   ensureResumeProviderReady as ensureResumeProviderReadyImpl,
   type ResumeProviderRecoveryDeps,

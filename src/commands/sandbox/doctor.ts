@@ -2,10 +2,9 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { Args } from "@oclif/core";
+import { runSandboxDoctor } from "../../lib/actions/sandbox/doctor";
 import { NemoClawCommand } from "../../lib/cli/nemoclaw-oclif-command";
 import { withStdoutRedirectedToStderr } from "../../lib/cli/stdout-guard";
-
-import { runSandboxDoctor } from "../../lib/actions/sandbox/doctor";
 
 export default class SandboxDoctorCliCommand extends NemoClawCommand {
   static id = "sandbox:doctor";

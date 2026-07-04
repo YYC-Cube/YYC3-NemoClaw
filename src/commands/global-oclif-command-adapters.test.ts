@@ -70,16 +70,16 @@ vi.mock("../lib/actions/inference-get", () => ({
 
 import { InferenceGetError } from "../lib/actions/inference-get";
 import { InferenceSetError } from "../lib/actions/inference-set";
+import BackupAllCommand from "./backup-all";
+import GarbageCollectImagesCommand from "./gc";
 import InferenceGetCommand from "./inference/get";
 import InferenceSetCommand from "./inference/set";
 import ListCommand from "./list";
-import BackupAllCommand from "./backup-all";
-import GarbageCollectImagesCommand from "./gc";
-import UpgradeSandboxesCommand from "./upgrade-sandboxes";
 import OnboardCliCommand from "./onboard";
 import SetupCliCommand from "./setup";
 import SetupSparkCliCommand from "./setup-spark";
 import StatusCommand from "./status";
+import UpgradeSandboxesCommand from "./upgrade-sandboxes";
 
 const rootDir = process.cwd();
 

@@ -2,12 +2,11 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { Args } from "@oclif/core";
+import { runOpenshellProviderCommand } from "../../lib/actions/global";
+import { OPENSHELL_OPERATION_TIMEOUT_MS } from "../../lib/adapters/openshell/timeouts";
 import { CLI_NAME } from "../../lib/cli/branding";
 import { yesFlag } from "../../lib/cli/common-flags";
 import { NemoClawCommand } from "../../lib/cli/nemoclaw-oclif-command";
-
-import { runOpenshellProviderCommand } from "../../lib/actions/global";
-import { OPENSHELL_OPERATION_TIMEOUT_MS } from "../../lib/adapters/openshell/timeouts";
 import { isBridgeProviderName, recoverGatewayOrExit } from "../../lib/credentials/command-support";
 import { prompt as askPrompt } from "../../lib/credentials/store";
 

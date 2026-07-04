@@ -11,7 +11,7 @@ vi.mock("../inference/local", () => ({
   DEFAULT_OLLAMA_MODEL: "llama3.1",
 }));
 
-import { runInferenceGet, type InferenceGetDeps } from "./inference-get";
+import { type InferenceGetDeps, runInferenceGet } from "./inference-get";
 
 function createDeps(output: string, status = 0): InferenceGetDeps & {
   log: ReturnType<typeof vi.fn>;

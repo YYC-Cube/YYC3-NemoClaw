@@ -1,15 +1,15 @@
 // SPDX-FileCopyrightText: Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
 // SPDX-License-Identifier: Apache-2.0
 
-import { describe, it, expect } from "vitest";
+import { describe, expect, it } from "vitest";
 // Import from compiled dist/ so coverage is attributed correctly.
 import {
   compactText,
-  stripEndpointSuffix,
-  normalizeProviderBaseUrl,
-  isLoopbackHostname,
   formatEnvAssignment,
+  isLoopbackHostname,
+  normalizeProviderBaseUrl,
   parsePolicyPresetEnv,
+  stripEndpointSuffix,
 } from "../../../dist/lib/core/url-utils";
 
 describe("compactText", () => {

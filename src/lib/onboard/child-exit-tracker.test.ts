@@ -75,7 +75,6 @@ describe("trackChildExit (#3111)", () => {
           queueMicrotask(() => cb(null, null));
         }
       },
-      // biome-ignore lint/suspicious/noExplicitAny: narrowed mock shape
     } as any;
     const state = trackChildExit(fake);
     await waitFor(() => state.exited);

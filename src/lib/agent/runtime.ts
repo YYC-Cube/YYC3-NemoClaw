@@ -11,7 +11,7 @@ import { DASHBOARD_PORT } from "../core/ports";
 import { shellQuote } from "../runner";
 import * as onboardSession from "../state/onboard-session";
 import * as registry from "../state/registry";
-import { loadAgent, type AgentDefinition } from "./defs";
+import { type AgentDefinition, loadAgent } from "./defs";
 
 /**
  * Resolve the agent for a sandbox. Checks the per-sandbox registry first

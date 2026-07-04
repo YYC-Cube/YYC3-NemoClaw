@@ -6,8 +6,8 @@ import { describe, expect, it, vi } from "vitest";
 import type { GatewayReuseState } from "../state/gateway";
 
 import {
-  PREFLIGHT_DEFERRED_RECREATE_MESSAGE,
   applyPreflightGatewayCleanup,
+  PREFLIGHT_DEFERRED_RECREATE_MESSAGE,
   preflightGatewayCleanupDecision,
 } from "./preflight-gateway-cleanup-decision";
 

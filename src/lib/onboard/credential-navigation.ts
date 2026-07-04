@@ -4,13 +4,13 @@
 import * as credentials from "../credentials/store";
 import {
   BACK_TO_SELECTION,
-  isBackToSelection,
   type BackToSelection,
+  isBackToSelection,
 } from "../navigation";
 
 export type BackNavigationResult = BackToSelection | { kind: "back" };
-export { BACK_TO_SELECTION, isBackToSelection };
 export type { BackToSelection };
+export { BACK_TO_SELECTION, isBackToSelection };
 
 export function getNavigationChoice(value = ""): "back" | "exit" | null {
   const normalized = String(value || "")

@@ -20,8 +20,8 @@ import {
   loadOnboardConfig,
 } from "./onboard/config.js";
 import { registerRuntimeContext } from "./runtime-context.js";
-import { scanForSecrets, isMemoryPath } from "./security/secret-scanner.js";
 import { safeResolvePath } from "./security/safe-resolve-path.js";
+import { isMemoryPath, scanForSecrets } from "./security/secret-scanner.js";
 
 type PluginScalar = string | number | boolean | null | undefined;
 type PluginValue = PluginScalar | PluginRecord | PluginValue[];

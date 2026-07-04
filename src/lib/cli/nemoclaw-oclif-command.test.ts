@@ -3,7 +3,7 @@
 
 import { afterEach, describe, expect, it, vi } from "vitest";
 
-import { NemoClawCommand, type CommandExitResult } from "./nemoclaw-oclif-command";
+import { type CommandExitResult, NemoClawCommand } from "./nemoclaw-oclif-command";
 
 class TestCommand extends NemoClawCommand {
   static id = "test";

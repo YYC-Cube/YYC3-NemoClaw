@@ -4,9 +4,9 @@
 import { AGENT_PRODUCT_NAME, CLI_DISPLAY_NAME, CLI_NAME } from "../cli/branding";
 import {
   brandedPublicText,
+  type CommandDef,
   commandsByGroup,
   visibleCommands,
-  type CommandDef,
 } from "../cli/command-registry";
 import { getRegisteredOclifCommandSummary } from "../cli/oclif-metadata";
 import { getVersion } from "../core/version";

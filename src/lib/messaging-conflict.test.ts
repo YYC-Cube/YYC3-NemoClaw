@@ -2,13 +2,12 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { describe, expect, it, vi } from "vitest";
-
-import type { SandboxEntry } from "./state/registry";
 import {
   backfillMessagingChannels,
   findAllOverlaps,
   findChannelConflicts,
 } from "./messaging-conflict";
+import type { SandboxEntry } from "./state/registry";
 
 type ConflictProbe = Parameters<typeof backfillMessagingChannels>[1];
 type ProviderExists = ConflictProbe["providerExists"];

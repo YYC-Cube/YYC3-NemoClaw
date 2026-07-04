@@ -1,11 +1,11 @@
 // SPDX-FileCopyrightText: Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
 // SPDX-License-Identifier: Apache-2.0
 
-import { CLI_NAME } from "../../lib/cli/branding";
-import { NemoClawCommand } from "../../lib/cli/nemoclaw-oclif-command";
 
 import { runOpenshellProviderCommand } from "../../lib/actions/global";
 import { OPENSHELL_OPERATION_TIMEOUT_MS } from "../../lib/adapters/openshell/timeouts";
+import { CLI_NAME } from "../../lib/cli/branding";
+import { NemoClawCommand } from "../../lib/cli/nemoclaw-oclif-command";
 import { isBridgeProviderName, recoverGatewayOrExit } from "../../lib/credentials/command-support";
 
 export default class CredentialsListCommand extends NemoClawCommand {

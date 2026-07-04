@@ -2,9 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { NemoClawCommand } from "../../lib/cli/nemoclaw-oclif-command";
-
-import { printShareUsageAndExit, ShareCommandError } from "../../lib/share-command";
 import { sandboxNameArg } from "../../lib/sandbox/command-support";
+import { printShareUsageAndExit, ShareCommandError } from "../../lib/share-command";
 
 export default class ShareCommand extends NemoClawCommand {
   static id = "sandbox:share";

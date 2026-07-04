@@ -2,10 +2,9 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { Flags } from "@oclif/core";
+import { buildInstallerPlan } from "../../../lib/actions/installer/plan";
 import { jsonFlag } from "../../../lib/cli/common-flags";
 import { NemoClawCommand } from "../../../lib/cli/nemoclaw-oclif-command";
-
-import { buildInstallerPlan } from "../../../lib/actions/installer/plan";
 
 export default class InternalInstallerPlanCommand extends NemoClawCommand {
   static hidden = true;

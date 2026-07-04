@@ -1,8 +1,8 @@
 // SPDX-FileCopyrightText: Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
 // SPDX-License-Identifier: Apache-2.0
 
-import type { GatewayContainerState } from "./gateway-container-running";
 import type { GatewayReuseState } from "../state/gateway";
+import type { GatewayContainerState } from "./gateway-container-running";
 
 export interface PreflightGatewayReuseDeps {
   gatewayReuseState: GatewayReuseState;

@@ -17,8 +17,8 @@
  * "Health Offline" in the dashboard.
  */
 
-import type { DashboardDeliveryChain } from "./dashboard/contract";
 import { compareChannelSets, type RuntimeChannelStatus } from "./channel-runtime-status";
+import type { DashboardDeliveryChain } from "./dashboard/contract";
 
 // ── Types ────────────────────────────────────────────────────────────
 

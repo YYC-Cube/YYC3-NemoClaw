@@ -1,11 +1,11 @@
 // SPDX-FileCopyrightText: Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
 // SPDX-License-Identifier: Apache-2.0
 
+import { OLLAMA_PORT } from "../core/ports";
 import {
   OLLAMA_HOST_DOCKER_INTERNAL,
   validateOllamaPortConfiguration,
 } from "../inference/local";
-import { OLLAMA_PORT } from "../core/ports";
 import {
   getInstalledOllamaVersion,
   getRunningOllamaDaemonVersion,

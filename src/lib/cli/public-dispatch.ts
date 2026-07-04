@@ -21,11 +21,12 @@ const {
   globalCommandTokens,
   sandboxActionTokens,
 } = require("./command-registry");
-import { normalizeArgv, suggestCommand, type NormalizedSandboxArgv } from "./argv-normalizer";
+
+import { type NormalizedSandboxArgv, normalizeArgv, suggestCommand } from "./argv-normalizer";
 import {
+  type PublicTranslationResult,
   translatePublicGlobalArgv,
   translatePublicSandboxArgv,
-  type PublicTranslationResult,
 } from "./public-argv-translation";
 
 // ── Global commands (derived from command registry) ──────────────

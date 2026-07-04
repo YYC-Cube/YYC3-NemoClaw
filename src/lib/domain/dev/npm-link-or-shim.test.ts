@@ -4,9 +4,9 @@
 import { describe, expect, it } from "vitest";
 
 import {
-  DEV_SHIM_MARKER,
   buildDevShimContents,
   classifyDevShim,
+  DEV_SHIM_MARKER,
   pathContainsDirectory,
 } from "./npm-link-or-shim";
 

@@ -2,9 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { NemoClawCommand } from "../../../lib/cli/nemoclaw-oclif-command";
-
-import * as shields from "../../../lib/shields/index";
 import { sandboxNameArg } from "../../../lib/sandbox/command-support";
+import * as shields from "../../../lib/shields/index";
 
 export default class ShieldsUpCommand extends NemoClawCommand {
   static id = "sandbox:shields:up";

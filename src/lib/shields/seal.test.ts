@@ -1,8 +1,8 @@
 // SPDX-FileCopyrightText: Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
 // SPDX-License-Identifier: Apache-2.0
 
-import { describe, expect, it } from "vitest";
 import path from "node:path";
+import { describe, expect, it } from "vitest";
 
 async function loadSeal(): Promise<typeof import("../../../dist/lib/shields/seal")> {
   const distModulePath = path.join(

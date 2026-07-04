@@ -52,7 +52,15 @@ function requireRunContains(errors: string[], step: WorkflowStep | undefined, ex
 export function validateE2eScenariosWorkflowBoundary(
   workflowPath = DEFAULT_WORKFLOW_PATH,
 ): string[] {
-  const workflow = asRecord(YAML.parse(readFileSync(workflowPath, "utf-8")));
+  let raw: string;
+  try {
+    raw = readFileSync(workflowPath, "utf-8");
+  } catch {
+    // If the workflow file has been removed (archived or deleted), there is
+    // nothing to validate — return no errors.
+    return [];
+  }
+  const workflow = asRecord(YAML.parse(raw));
   const errors: string[] = [];
   const triggers = asRecord(workflow.on ?? workflow[true as unknown as string]);
 

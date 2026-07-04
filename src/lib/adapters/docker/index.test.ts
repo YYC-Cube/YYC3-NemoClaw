@@ -18,8 +18,8 @@ import {
   dockerInfoFormat,
   dockerListVolumesByPrefix,
   dockerPull,
-  dockerRename,
   dockerRemoveVolumesByPrefix,
+  dockerRename,
   dockerRmi,
   dockerRunDetached,
 } from "./index";

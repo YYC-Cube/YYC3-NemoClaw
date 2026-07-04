@@ -4,14 +4,14 @@
 import { describe, expect, it } from "vitest";
 
 import {
-  KNOWN_CHANNELS,
+  type ChannelDef,
   channelHasStaticToken,
   channelUsesInSandboxQrPairing,
   getChannelDef,
   getChannelTokenKeys,
+  KNOWN_CHANNELS,
   knownChannelNames,
   listChannels,
-  type ChannelDef,
 } from "./channels";
 
 describe("sandbox-channels KNOWN_CHANNELS", () => {

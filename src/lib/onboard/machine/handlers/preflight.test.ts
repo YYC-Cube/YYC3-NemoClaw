@@ -4,8 +4,8 @@
 import { describe, expect, it, vi } from "vitest";
 
 import type { GpuDetection } from "../../../inference/nim";
-import { resolveSandboxGpuConfig } from "../../sandbox-gpu-mode";
 import { createSession, type Session } from "../../../state/onboard-session";
+import { resolveSandboxGpuConfig } from "../../sandbox-gpu-mode";
 import { handlePreflightState, type PreflightStateOptions } from "./preflight";
 
 type Gpu = GpuDetection | null;

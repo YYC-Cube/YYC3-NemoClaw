@@ -85,12 +85,12 @@ vi.mock("../lib/core/version", () => ({ getVersion: mocks.getVersion }));
 
 import DebugCliCommand from "./debug";
 import DeployCliCommand from "./deploy";
+import RootHelpCommand from "./root/help";
+import VersionCommand from "./root/version";
 import DashboardUrlCliCommand, { setDashboardUrlRuntimeBridgeFactoryForTest } from "./sandbox/dashboard-url";
 import GatewayTokenCliCommand, { setGatewayTokenRuntimeBridgeFactoryForTest } from "./sandbox/gateway/token";
 import DeprecatedStartCommand from "./start";
 import DeprecatedStopCommand from "./stop";
-import RootHelpCommand from "./root/help";
-import VersionCommand from "./root/version";
 import TunnelStartCommand from "./tunnel/start";
 import TunnelStopCommand from "./tunnel/stop";
 import UninstallCliCommand from "./uninstall";

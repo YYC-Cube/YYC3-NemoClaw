@@ -3,8 +3,8 @@
 
 import type { Session, SessionUpdates } from "../state/onboard-session";
 import { OnboardRuntime } from "./machine/runtime";
-import type { ResumeConfigConflict } from "./resume-config";
 import type { OnboardMachineEventType, OnboardMachineState } from "./machine/types";
+import type { ResumeConfigConflict } from "./resume-config";
 
 export interface OnboardRuntimeBoundaryOptions {
   toSessionUpdates(updates: Record<string, unknown>): SessionUpdates;

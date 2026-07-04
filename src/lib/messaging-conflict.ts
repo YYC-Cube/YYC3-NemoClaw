@@ -13,8 +13,8 @@
 // added have no record — can optionally backfill the channel field by probing
 // the live OpenShell gateway for known provider names.
 
-import type { SandboxEntry } from "./state/registry";
 import { getChannelDef, getChannelTokenKeys } from "./sandbox/channels";
+import type { SandboxEntry } from "./state/registry";
 
 type ProbeResult = "present" | "absent" | "error";
 type ConflictReason = "matching-token" | "unknown-token";

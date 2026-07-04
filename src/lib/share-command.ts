@@ -13,9 +13,8 @@ import { spawnSync } from "child_process";
 import fs from "fs";
 import os from "os";
 import path from "path";
-
-import { buildShareCommandDeps } from "./share-command-deps";
 import type { ShareCommandDeps } from "./share-command-deps";
+import { buildShareCommandDeps } from "./share-command-deps";
 
 export class ShareCommandError extends Error {
   readonly lines: readonly string[];

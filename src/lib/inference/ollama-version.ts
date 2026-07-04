@@ -8,6 +8,7 @@
  */
 
 const { runCapture } = require("../runner");
+
 import { OLLAMA_PORT } from "../core/ports";
 
 export type OllamaVersionRunCapture = (

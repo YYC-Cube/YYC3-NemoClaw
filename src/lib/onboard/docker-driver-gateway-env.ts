@@ -7,10 +7,10 @@ import path from "node:path";
 
 import {
   GATEWAY_BIND_ADDRESS,
-  WILDCARD_GATEWAY_BIND_ADDRESS,
   getGatewayConnectHost,
   getGatewayHttpEndpoint,
   getGatewayHttpsEndpoint,
+  WILDCARD_GATEWAY_BIND_ADDRESS,
 } from "../core/gateway-address";
 import { GATEWAY_PORT } from "../core/ports";
 

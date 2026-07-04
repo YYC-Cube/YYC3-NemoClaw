@@ -13,6 +13,7 @@ import type { CurlProbeResult } from "../adapters/http/probe";
 import { runCurlProbe } from "../adapters/http/probe";
 import type { CaptureResult } from "../runner";
 import { buildSubprocessEnv } from "../subprocess-env";
+import type { OllamaRuntimeModelStatus } from "./ollama-runtime-context";
 import {
   applyOllamaRuntimeContextWindow as applyOllamaRuntimeContextWindowWithHost,
   MAX_AUTODETECTED_OLLAMA_CONTEXT_WINDOW,
@@ -21,10 +22,10 @@ import {
   resetOllamaRuntimeContextWindowAutoState,
   resolveOllamaRuntimeContextWindow as resolveOllamaRuntimeContextWindowWithHost,
 } from "./ollama-runtime-context";
-import type { OllamaRuntimeModelStatus } from "./ollama-runtime-context";
 import {
   applyVllmRuntimeContextWindow as applyVllmRuntimeContextWindowFromModels,
 } from "./vllm-runtime-context";
+
 export type { OllamaRuntimeModelStatus } from "./ollama-runtime-context";
 
 const { shellQuote, runCapture, runCaptureEx } = require("../runner");

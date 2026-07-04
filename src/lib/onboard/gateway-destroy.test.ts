@@ -3,7 +3,7 @@
 
 import { describe, expect, it, vi } from "vitest";
 
-import { destroyGatewayWithVolumeCleanup, type DestroyGatewayDeps } from "./gateway-destroy";
+import { type DestroyGatewayDeps, destroyGatewayWithVolumeCleanup } from "./gateway-destroy";
 
 function deps(overrides: Partial<DestroyGatewayDeps> = {}): DestroyGatewayDeps {
   return {

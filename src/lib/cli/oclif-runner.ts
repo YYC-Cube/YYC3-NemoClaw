@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
 // SPDX-License-Identifier: Apache-2.0
 
-import { Config as OclifConfig, execute as executeOclif } from "@oclif/core";
+import { execute as executeOclif, Config as OclifConfig } from "@oclif/core";
 
 import { CLI_NAME } from "./branding";
 

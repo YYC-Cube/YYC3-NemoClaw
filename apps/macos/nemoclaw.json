@@ -1,0 +1,30 @@
+{
+  "name": "NemoClaw",
+  "displayName": "YYC³ NemoClaw",
+  "version": "0.1.0",
+  "description": "macOS desktop companion for NemoClaw — manage sandboxes, monitor status, access Dashboard",
+  "author": "YYC³ Team",
+  "license": "MIT",
+  "repository": "https://github.com/YYC-Cube/YYC3-NemoClaw",
+  "configuration": {
+    "ssh": {
+      "host": "yyc3-n1",
+      "user": "yyc3",
+      "identityFile": "~/.ssh/yyc3_ed25519",
+      "localPort": 18789,
+      "remotePort": 18789,
+      "remoteHost": "127.0.0.1"
+    },
+    "dashboard": {
+      "url": "http://localhost:18789",
+      "token": ""
+    },
+    "cli": {
+      "path": "/opt/homebrew/bin/nemoclaw"
+    },
+    "ollama": {
+      "endpoint": "http://127.0.0.1:11434",
+      "models": ["qwen3.6:35b-a3b", "yyc3-coder-v1", "qwen3-coder-30b"]
+    }
+  }
+}

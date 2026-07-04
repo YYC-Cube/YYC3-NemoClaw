@@ -6,12 +6,10 @@ import { describe, expect, it } from "vitest";
 import { createBuiltInChannelManifestRegistry } from "../channels";
 import { MessagingWorkflowPlanner } from "../compiler";
 import { createBuiltInMessagingHookRegistry, runMessagingHook } from "../hooks";
-import type { ChannelHookSpec } from "../manifest";
-import type {
+import type { ChannelHookSpec, 
   MessagingAgentId,
   MessagingSerializableObject,
-  SandboxMessagingPlan,
-} from "../manifest";
+  SandboxMessagingPlan,} from "../manifest";
 import { MessagingSetupApplier } from "./setup-applier";
 import {
   MESSAGING_SETUP_APPLIER_ENV_KEY,

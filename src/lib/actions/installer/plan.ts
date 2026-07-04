@@ -2,18 +2,18 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import {
+  type NpmLinkTargetState,
+  type NpmLinkTargetWritableResult,
   npmGlobalBin,
   npmLinkTargetsWritable,
   pathWithPrependedEntries,
-  type NpmLinkTargetState,
-  type NpmLinkTargetWritableResult,
 } from "../../domain/installer/npm";
 import {
+  type InstallerProvider,
   installerProviderHelpValues,
   normalizeInstallerProvider,
-  type InstallerProvider,
 } from "../../domain/installer/provider";
-import { resolveInstallerVersion, resolveInstallRef, type InstallerRefEnv } from "../../domain/installer/ref";
+import { type InstallerRefEnv, resolveInstallerVersion, resolveInstallRef } from "../../domain/installer/ref";
 import { checkInstallerRuntime, type RuntimeCheckResult } from "../../domain/installer/version";
 
 export interface InstallerPlanEnv extends InstallerRefEnv {

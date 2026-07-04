@@ -60,8 +60,8 @@ import {
 } from "../../state/sandbox-session";
 import { removeSandboxRegistryEntry } from "./destroy";
 import { executeSandboxCommand } from "./process-recovery";
-import { openRebuildShieldsWindow, printRebuildShieldsRecovery, relockRebuildShieldsWindow } from "./rebuild-shields";
 import { buildRebuildRecreateOnboardOpts } from "./rebuild-gpu-opt-out";
+import { openRebuildShieldsWindow, printRebuildShieldsRecovery, relockRebuildShieldsWindow } from "./rebuild-shields";
 
 /**
  * Emit timestamped rebuild diagnostics when verbose rebuild logging is enabled.

@@ -11,7 +11,7 @@
  * registry list. The diagnostic below has to fail loud for paired-but-idle.
  */
 
-import { loadAgent, type AgentDefinition } from "../../agent/defs";
+import { type AgentDefinition, loadAgent } from "../../agent/defs";
 import { CLI_DISPLAY_NAME, CLI_NAME } from "../../cli/branding";
 import { B, D, G, R, RD, YW } from "../../cli/terminal-style";
 import * as policies from "../../policy";
@@ -20,11 +20,11 @@ import {
   knownChannelNames,
 } from "../../sandbox/channels";
 import {
+  type DiagnosticSeverity,
+  type DiagnosticSignal,
   evaluateWhatsappDiagnostics,
   parseWhatsappHeartbeat,
   summarizeWhatsappLogLines,
-  type DiagnosticSeverity,
-  type DiagnosticSignal,
   type WhatsappDiagnosticReport,
   type WhatsappHeartbeat,
   type WhatsappProbeInput,

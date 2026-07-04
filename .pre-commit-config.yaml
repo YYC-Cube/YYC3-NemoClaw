@@ -1,0 +1,88 @@
+# SPDX-FileCopyrightText: Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-License-Identifier: Apache-2.0
+
+# Prek (https://prek.j178.dev/) hook configuration.
+# Compatible with pre-commit config format.
+#
+# Install: prek install  (runs automatically via `npm run prepare`)
+# Manual:  npx prek run --all-files
+
+repos:
+  - repo: local
+    hooks:
+      # ── pre-commit hooks ──────────────────────────────────────
+      - id: biome-check
+        name: biome check
+        description: Format and lint staged files with Biome
+        entry: npx @biomejs/biome check --write --no-errors-on-unmatched --files-max-size=2097152
+        language: system
+        types: [text]
+        files: \.(js|ts|mjs|mts|cjs|cts|jsx|tsx|json|jsonc)$
+
+      - id: biome-format
+        name: biome format
+        description: Format non-JS/TS files with Biome
+        entry: npx @biomejs/biome format --write --no-errors-on-unmatched
+        language: system
+        types: [text]
+        files: \.(yaml|yml|css|scss|html|md|mdx)$
+
+      - id: shellcheck
+        name: shellcheck
+        description: Lint shell scripts
+        entry: npx -y shellcheck --severity=warning
+        language: system
+        types: [shell]
+
+      - id: docs-to-skills-dry-run
+        name: docs-to-skills dry-run
+        description: Validate generated skills against docs (dry-run mode)
+        entry: npx tsx scripts/sync-agent-variant-docs.ts --check
+        language: system
+        pass_filenames: false
+        always_run: false
+
+      - id: vitest-plugin
+        name: vitest plugin
+        description: Run plugin unit tests
+        entry: npx vitest run --project plugin
+        language: system
+        pass_filenames: false
+        always_run: false
+
+      - id: check-spdx-headers
+        name: check SPDX headers
+        description: Ensure source files have SPDX license headers
+        entry: npx tsx scripts/checks/run.ts
+        language: system
+        pass_filenames: false
+        always_run: false
+
+      # ── pre-push hooks ────────────────────────────────────────
+      - id: typecheck-plugin
+        name: typecheck plugin
+        description: TypeScript check for plugin with --noEmit
+        entry: bash -c 'cd nemoclaw && npx tsc --noEmit'
+        language: system
+        pass_filenames: false
+        always_run: true
+        stages: [pre-push]
+
+      - id: typecheck-cli
+        name: typecheck CLI
+        description: TypeScript check for CLI with tsconfig.cli.json
+        entry: npx tsc -p tsconfig.cli.json --noEmit
+        language: system
+        pass_filenames: false
+        always_run: true
+        stages: [pre-push]
+
+  # ── commit-msg hook ──────────────────────────────────────────
+  - repo: local
+    hooks:
+      - id: commitlint
+        name: commitlint
+        description: Check commit messages follow Conventional Commits
+        entry: npx commitlint --edit
+        language: system
+        stages: [commit-msg]

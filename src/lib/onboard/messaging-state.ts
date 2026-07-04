@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import type { AgentDefinition } from "../agent/defs";
-import { channelUsesInSandboxQrPairing, type ChannelDef } from "../sandbox/channels";
+import { type ChannelDef, channelUsesInSandboxQrPairing } from "../sandbox/channels";
 
 export type MessagingChannel = { name: string } & ChannelDef;
 

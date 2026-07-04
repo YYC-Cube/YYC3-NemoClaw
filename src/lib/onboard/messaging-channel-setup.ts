@@ -10,7 +10,7 @@ import {
   normalizeMessagingChannelConfigValue,
   resolveMessagingChannelConfigEnvValue,
 } from "../messaging-channel-config";
-import { channelHasStaticToken, type ChannelDef } from "../sandbox/channels";
+import { type ChannelDef, channelHasStaticToken } from "../sandbox/channels";
 import { dispatchHostQrLogin } from "./host-qr-dispatch";
 import {
   getMessagingToken,

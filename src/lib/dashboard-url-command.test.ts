@@ -4,8 +4,8 @@
 import { describe, expect, it, vi } from "vitest";
 
 import {
-  DashboardUrlCommandError,
   buildDashboardUrl,
+  DashboardUrlCommandError,
   runDashboardUrlCommand,
 } from "./dashboard-url-command";
 

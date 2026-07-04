@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
 // SPDX-License-Identifier: Apache-2.0
 
-import { dockerCapture, dockerRun, type DockerCaptureOptions, type DockerRunOptions } from "./run";
+import { type DockerCaptureOptions, type DockerRunOptions, dockerCapture, dockerRun } from "./run";
 
 export function dockerInspect(args: readonly string[], opts: DockerRunOptions = {}) {
   return dockerRun(["inspect", ...args], opts);

@@ -5,9 +5,9 @@ import { startSandboxChannel } from "../../../lib/actions/sandbox/policy-channel
 import { NemoClawCommand } from "../../../lib/cli/nemoclaw-oclif-command";
 
 import {
-  channelMutationOptions,
   channelMutationArgs,
   channelMutationFlags,
+  channelMutationOptions,
 } from "../../../lib/sandbox/channels-command-support";
 
 export default class ChannelsStartCommand extends NemoClawCommand {

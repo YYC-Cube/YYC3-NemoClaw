@@ -4,12 +4,12 @@
 import { describe, expect, it } from "vitest";
 
 import {
-  DEFAULT_VLLM_MODEL,
-  VLLM_MODELS,
   assertGatedModelAccess,
   buildVllmServeCommand,
+  DEFAULT_VLLM_MODEL,
   preflightVllmModelEnv,
   selectVllmModelFromEnv,
+  VLLM_MODELS,
 } from "../../../dist/lib/inference/vllm-models";
 
 describe("vllm model registry", () => {

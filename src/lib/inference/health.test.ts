@@ -3,13 +3,13 @@
 
 import fs from "node:fs";
 
-import { describe, it, expect } from "vitest";
+import { describe, expect, it } from "vitest";
 
 // Import from compiled dist/ for correct coverage attribution.
 import {
   getRemoteProviderHealthEndpoint,
-  probeRemoteProviderHealth,
   probeProviderHealth,
+  probeRemoteProviderHealth,
 } from "../../../dist/lib/inference/health";
 
 import { BUILD_ENDPOINT_URL } from "../../../dist/lib/inference/provider-models";

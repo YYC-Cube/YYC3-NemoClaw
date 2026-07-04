@@ -1,19 +1,18 @@
 // SPDX-FileCopyrightText: Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
 // SPDX-License-Identifier: Apache-2.0
 
-import { describe, expect, it, beforeEach, afterEach } from "vitest";
-import { mkdtempSync, writeFileSync, readFileSync } from "node:fs";
-import { join } from "node:path";
+import { mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
-import { rmSync } from "node:fs";
+import { join } from "node:path";
+import { afterEach, beforeEach, describe, expect, it } from "vitest";
 
 import {
   isConfigValue,
   isCredentialField,
-  stripCredentials,
-  sanitizeConfigFile,
   isSensitiveFile,
+  sanitizeConfigFile,
   shouldScanSnapshotFileForCredentials,
+  stripCredentials,
 } from "./credential-filter.js";
 
 describe("isCredentialField", () => {

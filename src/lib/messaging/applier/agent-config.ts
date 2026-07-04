@@ -6,6 +6,7 @@ import { posix as path } from "node:path";
 import YAML from "yaml";
 
 import { redact } from "../../security/redact";
+import type { MessagingHookOutputMap } from "../hooks";
 import type {
   ChannelHookPhase,
   MessagingAgentId,
@@ -16,13 +17,12 @@ import type {
   SandboxMessagingJsonRenderPlan,
   SandboxMessagingPlan,
 } from "../manifest";
-import type { MessagingHookOutputMap } from "../hooks";
+import { enabledPlanChannels, filterEnabledPlanEntries } from "./plan-filter";
 import type {
   MessagingHookApplyRequest,
   MessagingHookApplyRunner,
   MessagingOpenShellRunner,
 } from "./types";
-import { enabledPlanChannels, filterEnabledPlanEntries } from "./plan-filter";
 
 const AGENT_CONFIG_HOOK_PHASES = new Set<ChannelHookPhase>([
   "apply",
