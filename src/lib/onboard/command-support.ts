@@ -37,7 +37,7 @@ export type OnboardFlags = {
   "control-ui-port"?: number;
   yes?: boolean;
   "no-ollama-autostart"?: boolean;
-  [acceptFlagName]?: boolean;
+  [key: string]: boolean | string | number | undefined;
 };
 
 export function buildOnboardFlags(): Record<string, any> {

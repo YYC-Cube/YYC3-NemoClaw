@@ -142,9 +142,9 @@ describe("verifyWebSearchInsideSandbox", () => {
     );
 
     const throwing = deps(null);
-    throwing.runCaptureOpenshell = vi.fn(() => {
-      throw new Error("boom");
-    });
+    throwing.runCaptureOpenshell = vi.fn(
+      () => { throw new Error("boom"); },
+    ) as unknown as typeof throwing.runCaptureOpenshell;
     verifyWebSearchInsideSandbox("alpha", { name: "openclaw" }, throwing);
     expect(throwing.warn).toHaveBeenCalledWith("  ⚠ Web search verification probe failed (non-fatal).");
   });

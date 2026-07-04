@@ -3,7 +3,7 @@
 //
 // Behavioural tests for trackChildExit. Co-located with the module.
 //
-// See: https://github.com/NVIDIA/NemoClaw/issues/3111
+// See: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/3111
 
 import { spawn } from "node:child_process";
 import { describe, expect, it } from "vitest";

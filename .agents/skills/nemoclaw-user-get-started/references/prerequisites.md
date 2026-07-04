@@ -64,7 +64,7 @@ Refer to the troubleshooting guide (use the `nemoclaw-user-reference` skill) for
 
 The following table lists tested platform and runtime combinations.
 Availability is not limited to these entries, but untested configurations can have issues.
-The table comes from [`ci/platform-matrix.json`](https://github.com/NVIDIA/NemoClaw/blob/main/ci/platform-matrix.json), the single source of truth kept in sync by CI and QA.
+The table comes from [`ci/platform-matrix.json`](https://github.com/YYC-Cube/YYC3-NemoClaw/blob/main/ci/platform-matrix.json), the single source of truth kept in sync by CI and QA.
 
 | OS | Container runtime | Status | Notes |
 |----|-------------------|--------|-------|

@@ -14,7 +14,7 @@
 #   # shellcheck source=scripts/lib/sandbox-init.sh
 #   source "${SCRIPT_DIR}/../scripts/lib/sandbox-init.sh"  # adjust path
 #
-# Ref: https://github.com/NVIDIA/NemoClaw/issues/2277
+# Ref: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/2277
 
 # Guard against double-sourcing.
 [ -z "${_SANDBOX_INIT_LOADED:-}" ] || return 0
@@ -37,7 +37,7 @@ _SANDBOX_INIT_LOADED=1
 # owned by sandbox. chmod 444 is best-effort (owner can chmod back).
 # This is an accepted limitation documented in the OpenShell security model.
 #
-# See also: https://github.com/NVIDIA/NemoClaw/issues/2181
+# See also: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/2181
 # ─────────────────────────────────────────────────────────────────
 
 # ── Secure file helpers ──────────────────────────────────────────
@@ -157,7 +157,7 @@ validate_tmp_permissions() {
 #   # ... perform writes ...
 #   lock_config_after_write /sandbox/.openclaw/openclaw.json /sandbox/.openclaw/.config-hash
 #
-# Ref: https://github.com/NVIDIA/NemoClaw/issues/2653
+# Ref: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/2653
 
 relax_config_for_write() {
   local f
@@ -218,8 +218,8 @@ lock_config_after_write() {
 # missing), the default is to warn and continue. Set NEMOCLAW_REQUIRE_CAP_DROP=1
 # to make that case fail-closed instead — see enforce_cap_drop_if_required.
 #
-# Ref: https://github.com/NVIDIA/NemoClaw/issues/797
-#      https://github.com/NVIDIA/NemoClaw/issues/3280
+# Ref: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/797
+#      https://github.com/YYC-Cube/YYC3-NemoClaw/issues/3280
 #      https://github.com/NVIDIA/OpenShell/issues/1452 (connect-shell scope)
 #
 # Usage:
@@ -355,7 +355,7 @@ enforce_cap_drop_if_required() {
 │ To run anyway with the weaker (warn-only) posture, unset the variable:
 │   unset NEMOCLAW_REQUIRE_CAP_DROP
 │
-│ Tracking: https://github.com/NVIDIA/NemoClaw/issues/3280
+│ Tracking: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/3280
 └──────────────────────────────────────────────────────────────────────────────
 EOF
   echo "[SECURITY] ${reason}" >&2

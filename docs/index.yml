@@ -161,7 +161,7 @@ navigation:
                 path: _build/agent-variants/resources/agent-skills.openclaw.generated.mdx
                 slug: agent-skills
               - link: "Report Vulnerabilities"
-                href: https://github.com/NVIDIA/NemoClaw/blob/main/SECURITY.md
+                href: https://github.com/YYC-Cube/YYC3-NemoClaw/blob/main/SECURITY.md
               - page: "License"
                 path: _build/agent-variants/resources/license.openclaw.generated.mdx
                 slug: license
@@ -296,7 +296,7 @@ navigation:
                 path: _build/agent-variants/resources/agent-skills.hermes.generated.mdx
                 slug: agent-skills
               - link: "Report Vulnerabilities"
-                href: https://github.com/NVIDIA/NemoClaw/blob/main/SECURITY.md
+                href: https://github.com/YYC-Cube/YYC3-NemoClaw/blob/main/SECURITY.md
               - page: "License"
                 path: _build/agent-variants/resources/license.hermes.generated.mdx
                 slug: license

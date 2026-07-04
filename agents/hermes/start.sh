@@ -632,7 +632,7 @@ fi
 # emit_sandbox_sourced_file() (444, root-owned when running as root) instead of
 # appending inline to .bashrc/.profile. The old approach rewrote files under
 # /sandbox during startup, which fails in non-root entrypoint postures.
-# Ref: https://github.com/NVIDIA/NemoClaw/issues/2277
+# Ref: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/2277
 _PROXY_ENV_FILE="/tmp/nemoclaw-proxy-env.sh"
 write_runtime_shell_env() {
   {

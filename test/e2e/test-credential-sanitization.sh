@@ -27,7 +27,7 @@
 # Usage:
 #   NEMOCLAW_NON_INTERACTIVE=1 NEMOCLAW_ACCEPT_THIRD_PARTY_SOFTWARE=1 NVIDIA_API_KEY=nvapi-... bash test/e2e/test-credential-sanitization.sh
 #
-# See: https://github.com/NVIDIA/NemoClaw/pull/156
+# See: https://github.com/YYC-Cube/YYC3-NemoClaw/pull/156
 
 set -uo pipefail
 

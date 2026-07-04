@@ -8,8 +8,8 @@
  * debug.sh delegates to the compiled redact module when node is available;
  * its sed fallback only covers the prefixes in EXPECTED_SHELL_PREFIXES.
  *
- * Ref: https://github.com/NVIDIA/NemoClaw/issues/2381
- * Ref: https://github.com/NVIDIA/NemoClaw/issues/1736
+ * Ref: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/2381
+ * Ref: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/1736
  */
 
 /** Token-prefix patterns that match standalone (no context needed). */

@@ -10,7 +10,7 @@ import { spawnSync } from "node:child_process";
 const INSTALLER = path.join(import.meta.dirname, "..", "install.sh");
 const CURL_PIPE_INSTALLER = path.join(import.meta.dirname, "..", "install.sh");
 const INSTALLER_PAYLOAD = path.join(import.meta.dirname, "..", "scripts", "install.sh");
-const GITHUB_INSTALL_URL = "git+https://github.com/NVIDIA/NemoClaw.git";
+const GITHUB_INSTALL_URL = "git+https://github.com/YYC-Cube/YYC3-NemoClaw.git";
 /**
  * Build an isolated "system bin" directory used by every test in this file
  * via TEST_SYSTEM_PATH. The directory mirrors /usr/bin and /bin via symlinks

@@ -133,7 +133,7 @@ describe("scanForSecrets", () => {
     });
 
     it("URLs with path segments", () => {
-      expect(scanForSecrets("https://github.com/NVIDIA/NemoClaw/pull/1121")).toHaveLength(0);
+      expect(scanForSecrets("https://github.com/YYC-Cube/YYC3-NemoClaw/pull/1121")).toHaveLength(0);
     });
 
     it("UUIDs", () => {

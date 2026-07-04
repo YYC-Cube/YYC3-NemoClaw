@@ -176,7 +176,6 @@ function parseArgs(args: string[]): Options {
       case "-h":
       case "--help":
         printUsageAndExit(0);
-        break;
       default:
         if (arg.startsWith("--branch=")) {
           branchName = arg.slice("--branch=".length);
@@ -263,9 +262,9 @@ function ensureOnMainBranch(): void {
 function ensureOriginIsCanonicalRepo(): void {
   const originUrl = run("git", ["remote", "get-url", "origin"]).trim();
   const allowed = new Set([
-    "git@github.com:NVIDIA/NemoClaw.git",
-    "https://github.com/NVIDIA/NemoClaw.git",
-    "https://github.com/NVIDIA/NemoClaw",
+    "git@github.com:YYC-Cube/YYC3-NemoClaw.git",
+    "https://github.com/YYC-Cube/YYC3-NemoClaw.git",
+    "https://github.com/YYC-Cube/YYC3-NemoClaw",
   ]);
 
   if (!allowed.has(originUrl)) {
@@ -526,8 +525,8 @@ function buildPrBody(previousVersion: string, nextVersion: string, options: PrBo
     "",
     "### General",
     "",
-    "- [x] I have read and followed the [contributing guide](https://github.com/NVIDIA/NemoClaw/blob/main/CONTRIBUTING.md).",
-    "- [ ] I have read and followed the [style guide](https://github.com/NVIDIA/NemoClaw/blob/main/docs/CONTRIBUTING.md). (for doc-only changes)",
+    "- [x] I have read and followed the [contributing guide](https://github.com/YYC-Cube/YYC3-NemoClaw/blob/main/CONTRIBUTING.md).",
+    "- [ ] I have read and followed the [style guide](https://github.com/YYC-Cube/YYC3-NemoClaw/blob/main/docs/CONTRIBUTING.md). (for doc-only changes)",
     "",
     "### Code Changes",
     `- [${options.ranFormat ? "x" : " "}] Formatters applied — \`npx prek run --all-files\` auto-fixes formatting (or \`make format\` for targeted runs).`,
@@ -536,7 +535,7 @@ function buildPrBody(previousVersion: string, nextVersion: string, options: PrBo
     "- [x] Doc pages updated for any user-facing behavior changes (new commands, changed defaults, new features, bug fixes that contradict existing docs).",
     "",
     "### Doc Changes",
-    '- [ ] Follows the [style guide](https://github.com/NVIDIA/NemoClaw/blob/main/docs/CONTRIBUTING.md). Try running the `update-docs` agent skill to draft changes while complying with the style guide. For example, prompt your agent with "`/update-docs` catch up the docs for the new changes I made in this PR."',
+    '- [ ] Follows the [style guide](https://github.com/YYC-Cube/YYC3-NemoClaw/blob/main/docs/CONTRIBUTING.md). Try running the `update-docs` agent skill to draft changes while complying with the style guide. For example, prompt your agent with "`/update-docs` catch up the docs for the new changes I made in this PR."',
     "- [ ] New pages include SPDX license header and frontmatter, if creating a new page.",
     "- [x] Cross-references and links verified.",
     "",

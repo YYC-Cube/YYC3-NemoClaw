@@ -50,7 +50,8 @@ export function findMissingDistSourcemapSources(distDir: string): string[] {
   const missing: string[] = [];
   for (const mapPath of walkFiles(distDir).filter((file) => file.endsWith(".js.map"))) {
     const sourceMap = readSourceMap(mapPath);
-    const sources = Array.isArray(sourceMap?.sources) ? sourceMap.sources : [];
+    if (!sourceMap) continue;
+    const sources = Array.isArray(sourceMap.sources) ? sourceMap.sources : [];
     for (const source of sources) {
       if (typeof source !== "string") continue;
       if (!sourceExists(mapPath, source)) {

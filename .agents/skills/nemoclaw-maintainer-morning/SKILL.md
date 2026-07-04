@@ -53,8 +53,8 @@ Output the daily plan:
 
 | Target | Item | Type | Owner | Next action |
 |--------|------|------|-------|-------------|
-| v0.0.8 | [#1234](https://github.com/NVIDIA/NemoClaw/pull/1234) | PR | @author | Run merge gate |
-| v0.0.8 | [#1235](https://github.com/NVIDIA/NemoClaw/issues/1235) | Issue | unassigned | Needs PR |
+| v0.0.8 | [#1234](https://github.com/YYC-Cube/YYC3-NemoClaw/pull/1234) | PR | @author | Run merge gate |
+| v0.0.8 | [#1235](https://github.com/YYC-Cube/YYC3-NemoClaw/issues/1235) | Issue | unassigned | Needs PR |
 
 Include: total items targeted, how many are PRs vs issues, how many are already merge-ready.
 

@@ -1043,7 +1043,7 @@ check_remote_url() {
   fi
   if ! "$CURL" -fsS -L -o /dev/null \
     --connect-timeout 12 --max-time 35 \
-    -A 'NemoClaw-doc-link-check/1.0 (+https://github.com/NVIDIA/NemoClaw)' \
+    -A 'NemoClaw-doc-link-check/1.0 (+https://github.com/YYC-Cube/YYC3-NemoClaw)' \
     "$url" 2>/dev/null; then
     echo "check-docs: [links] unreachable URL: $url" >&2
     return 1
@@ -1062,9 +1062,9 @@ normalize_url_for_ignore_match() {
 # Built-in skip list: pages that often fail in CI (bot wall, redirects, or flaky) but are non-critical for doc correctness.
 check_docs_default_ignored_urls() {
   printf '%s\n' \
-    'https://github.com/NVIDIA/NemoClaw/commits/main' \
-    'https://github.com/NVIDIA/NemoClaw/pulls?q=is%3Apr+is%3Amerged' \
-    'https://github.com/NVIDIA/NemoClaw/pulls?q=is:pr+is:merged' \
+    'https://github.com/YYC-Cube/YYC3-NemoClaw/commits/main' \
+    'https://github.com/YYC-Cube/YYC3-NemoClaw/pulls?q=is%3Apr+is%3Amerged' \
+    'https://github.com/YYC-Cube/YYC3-NemoClaw/pulls?q=is:pr+is:merged' \
     'https://github.com/openclaw/openclaw/issues/49950'
 }
 

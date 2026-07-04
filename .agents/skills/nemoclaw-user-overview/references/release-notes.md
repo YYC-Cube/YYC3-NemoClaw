@@ -4,7 +4,7 @@
 
 NVIDIA NemoClaw is available in early preview starting March 16, 2026.
 Use this page to track the highlights of the latest release.
-For more detailed release notes, refer to the [NemoClaw GitHub announcements](https://github.com/NVIDIA/NemoClaw/discussions/categories/announcements?discussions_q=is%3Aopen+category%3AAnnouncements).
+For more detailed release notes, refer to the [NemoClaw GitHub announcements](https://github.com/YYC-Cube/YYC3-NemoClaw/discussions/categories/announcements?discussions_q=is%3Aopen+category%3AAnnouncements).
 
 ## v0.0.58
 

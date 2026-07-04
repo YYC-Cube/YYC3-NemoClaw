@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 // Regression tests for SSH identity drift after host reboot.
-// Covers: https://github.com/NVIDIA/NemoClaw/issues/2056
+// Covers: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/2056
 //
 // Simulates the post-reboot scenario where the gateway restarts with new SSH
 // keys, causing "handshake verification failed" errors. Verifies:

@@ -82,7 +82,7 @@ exec > >(tee -a "$_START_LOG" >&3) 2> >(tee -a "$_START_LOG" >&4)
 
 # ── Source shared sandbox initialisation library ─────────────────
 # Single source of truth for security-sensitive primitives shared with
-# agents/hermes/start.sh. Ref: https://github.com/NVIDIA/NemoClaw/issues/2277
+# agents/hermes/start.sh. Ref: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/2277
 # Installed location (container): /usr/local/lib/nemoclaw/sandbox-init.sh
 # Dev fallback: scripts/lib/sandbox-init.sh relative to this script.
 _SANDBOX_INIT="/usr/local/lib/nemoclaw/sandbox-init.sh"
@@ -701,7 +701,7 @@ ensure_mutable_openclaw_config_hash() {
 #
 # SECURITY: These env vars come from the host (Docker/OpenShell), not from
 # inside the sandbox. The agent cannot set them.
-# Ref: https://github.com/NVIDIA/NemoClaw/issues/759
+# Ref: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/759
 
 apply_model_override() {
   # Only explicit override env vars trigger a config patch. NEMOCLAW_CONTEXT_WINDOW,
@@ -851,7 +851,7 @@ PYOVERRIDE
 # sandbox start so the next session boots with a consistent identity.
 # Runs after apply_model_override so explicit NEMOCLAW_MODEL_OVERRIDE
 # values still win. No-op when already in sync.
-# Ref: https://github.com/NVIDIA/NemoClaw/issues/3175
+# Ref: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/3175
 
 reconcile_agent_model_with_provider() {
   if [ "$(id -u)" -ne 0 ]; then
@@ -932,7 +932,7 @@ PYRECONCILE_WRITE
 # without rebuilding the sandbox image. Useful for custom domains/ports.
 # Same trust model as model override: host-set env var, applied before
 # chattr +i, hash recomputed.
-# Ref: https://github.com/NVIDIA/NemoClaw/issues/719
+# Ref: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/719
 
 apply_cors_override() {
   [ -n "${NEMOCLAW_CORS_ORIGIN:-}" ] || return 0
@@ -1241,7 +1241,7 @@ PYSLACKSECRET
 # Same pattern as the HTTP proxy fix (_PROXY_FIX_SCRIPT) and the
 # WebSocket CONNECT fix (_WS_FIX_SCRIPT).
 #
-# Ref: https://github.com/NVIDIA/NemoClaw/issues/2340
+# Ref: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/2340
 _SLACK_GUARD_SCRIPT="/tmp/nemoclaw-slack-channel-guard.js"
 _SLACK_GUARD_SOURCE="/usr/local/lib/nemoclaw/preloads/slack-channel-guard.js"
 
@@ -1530,7 +1530,7 @@ write_auth_profile() {
   # Read the provider key from the NEMOCLAW_PROVIDER_KEY env var (exported at
   # Dockerfile:99 from the build-time ARG). This avoids parsing openclaw.json
   # and ensures the auth profile matches the provider key in the model config.
-  # See: https://github.com/NVIDIA/NemoClaw/issues/1332
+  # See: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/1332
   local provider_key="${NEMOCLAW_PROVIDER_KEY:-inference}"
 
   python3 - "$provider_key" <<'PYAUTH'
@@ -1821,7 +1821,7 @@ PYAUTOPAIR
 #
 # NEMOCLAW_PROXY_HOST / NEMOCLAW_PROXY_PORT can be overridden at sandbox
 # creation time if the gateway IP or port changes in a future OpenShell release.
-# Ref: https://github.com/NVIDIA/NemoClaw/issues/626
+# Ref: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/626
 PROXY_HOST="${NEMOCLAW_PROXY_HOST:-10.200.0.1}"
 PROXY_PORT="${NEMOCLAW_PROXY_PORT:-3128}"
 _PROXY_URL="http://${PROXY_HOST}:${PROXY_PORT}"
@@ -1925,7 +1925,7 @@ export NODE_OPTIONS="${NODE_OPTIONS:+$NODE_OPTIONS }--require $_NEMOTRON_FIX_SCR
 # gateway even though mDNS is not needed. The guard monkey-patches
 # os.networkInterfaces to return an empty object on failure instead
 # of throwing, and catches the uncaughtException as a fallback.
-# Ref: https://github.com/NVIDIA/NemoClaw/issues/2340
+# Ref: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/2340
 _CIAO_GUARD_SCRIPT="/tmp/nemoclaw-ciao-network-guard.js"
 _CIAO_GUARD_SOURCE="/usr/local/lib/nemoclaw/preloads/ciao-network-guard.js"
 emit_sandbox_sourced_file "$_CIAO_GUARD_SCRIPT" <"$_CIAO_GUARD_SOURCE"
@@ -1973,7 +1973,7 @@ export NODE_OPTIONS="${NODE_OPTIONS:+$NODE_OPTIONS }--require $_SECCOMP_GUARD_SC
 # which ensures root:root 444 in root mode (sandbox cannot modify) and
 # best-effort 444 in non-root mode. The /tmp sticky bit prevents the
 # sandbox user from deleting or replacing the root-owned file.
-# Ref: https://github.com/NVIDIA/NemoClaw/issues/2181
+# Ref: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/2181
 #
 # Both uppercase and lowercase variants are required: Node.js undici prefers
 # lowercase (no_proxy) over uppercase (NO_PROXY) when both are set.
@@ -2622,7 +2622,7 @@ migrate_legacy_layout() {
 # Reuse OpenClaw's own bundled templates so seeded content matches what
 # upstream would have produced. BOOTSTRAP.md is intentionally excluded —
 # its presence is what triggers the interactive turn we are skipping.
-# Ref: https://github.com/NVIDIA/NemoClaw/issues/3240
+# Ref: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/3240
 seed_default_workspace_templates() {
   local workspace_dir="${1:-/sandbox/.openclaw/workspace}"
   local templates_dir="${2:-}"
@@ -3013,7 +3013,7 @@ chmod 600 /tmp/auto-pair.log
 # layout these live directly under `.openclaw/` (no symlink indirection).
 # Ensure they exist and are sandbox-writable.
 #
-# Ref: https://github.com/NVIDIA/NemoClaw/issues/1260
+# Ref: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/1260
 provision_agent_workspaces() {
   local config_dir="/sandbox/.openclaw"
   local names=""
@@ -3090,6 +3090,24 @@ provision_agent_workspaces
 # ownership (the function's own cp calls would otherwise produce
 # root-owned files in this branch). See function comment for context.
 seed_default_workspace_templates_as_sandbox
+
+# ── YYC³ i18n Services ───────────────────────────────────────
+# 注入 @yyc3/i18n-core MCP Server 配置到 openclaw.json，
+# 使 OpenClaw Agent 可直接调用翻译、语言检测、质量评估工具。
+# 后台服务（AI 翻译引擎）由 OpenClaw 按需 spawn。
+# 跳过条件：设置了 I18N_SKIP_MCP=1 或脚本不存在。
+_I18N_SERVICES_SCRIPT="$(dirname "$0")/start-i18n-services.sh"
+if [ -f "$_I18N_SERVICES_SCRIPT" ] && [ "${I18N_SKIP_MCP:-}" != "1" ]; then
+  # 作为 gateway user 运行以免影响 sandbox 权限边界
+  # SECURITY: 脚本仅操作 /sandbox/.openclaw/openclaw.json，
+  # 不接触 /tmp 系统文件，不提升权限。
+  if bash "$_I18N_SERVICES_SCRIPT" 2>&1; then
+    echo "[i18n] YYC³ i18n services initialized" >&2
+  else
+    echo "[i18n] YYC³ i18n services setup failed (non-fatal)" >&2
+  fi
+fi
+unset _I18N_SERVICES_SCRIPT
 
 # Defence-in-depth: verify /tmp file permissions before launching services.
 # Pass the HTTP proxy-fix path so it is validated alongside proxy-env.sh

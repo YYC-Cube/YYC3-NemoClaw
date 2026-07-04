@@ -64,7 +64,7 @@ the sandbox entrypoint provisions each `workspace-<name>/` directly under the wr
 Files that operators typically want consistent across every agent workspace
 (`AGENTS.md`, shared skills, common templates) are not synced automatically.
 Each workspace is independent, and changes in one do not propagate.
-NVIDIA tracks shared-file tooling (shared mount, `workspaces list` command) in [#1260](https://github.com/NVIDIA/NemoClaw/issues/1260).
+NVIDIA tracks shared-file tooling (shared mount, `workspaces list` command) in [#1260](https://github.com/YYC-Cube/YYC3-NemoClaw/issues/1260).
 
 ## Persistence Behavior
 

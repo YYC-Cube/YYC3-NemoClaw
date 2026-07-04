@@ -6,7 +6,7 @@
 // established by gateway-http-readiness and other src/lib/onboard/*
 // modules.
 //
-// See: https://github.com/NVIDIA/NemoClaw/issues/3111
+// See: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/3111
 
 import net from "node:net";
 import { afterEach, describe, expect, it, vi } from "vitest";

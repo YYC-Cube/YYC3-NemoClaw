@@ -123,11 +123,11 @@ export async function handlePoliciesState<Agent, WebSearchConfig>({
   agent,
   deps,
 }: PoliciesStateOptions<Agent, WebSearchConfig>): Promise<PoliciesStateResult> {
-  const latestSession = deps.loadSession();
-  const recordedPolicyPresets = Array.isArray(latestSession?.policyPresets)
+  const latestSession = deps.loadSession()!;
+  const recordedPolicyPresets = Array.isArray(latestSession.policyPresets)
     ? latestSession.policyPresets
     : null;
-  const recordedMessagingChannels = Array.isArray(latestSession?.messagingChannels)
+  const recordedMessagingChannels = Array.isArray(latestSession.messagingChannels)
     ? latestSession.messagingChannels
     : [];
   const activeSandbox = deps.getActiveSandbox(sandboxName);

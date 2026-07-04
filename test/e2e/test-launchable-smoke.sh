@@ -44,7 +44,7 @@
 #   NEMOCLAW_NON_INTERACTIVE=1 NEMOCLAW_ACCEPT_THIRD_PARTY_SOFTWARE=1 \
 #     NVIDIA_API_KEY=nvapi-... bash test/e2e/test-launchable-smoke.sh
 #
-# See: https://github.com/NVIDIA/NemoClaw/issues/2599
+# See: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/2599
 
 set -uo pipefail
 
@@ -114,7 +114,7 @@ TEST_LOG="/tmp/nemoclaw-launchable-test.log"
 NEMOCLAW_CLONE_DIR="${NEMOCLAW_CLONE_DIR:-${HOME}/NemoClaw-launchable}"
 export NEMOCLAW_CLONE_DIR
 
-# The launchable script clones from github.com/NVIDIA/NemoClaw using
+# The launchable script clones from github.com/YYC-Cube/YYC3-NemoClaw using
 # NEMOCLAW_REF as the branch. To test the CURRENT code (not main HEAD),
 # we pre-seed the clone directory from the checkout (see Phase 0) and
 # create a branch named "main" at the current commit. The script detects

@@ -12,7 +12,7 @@
 // provider startup failure as fatal. Non-Slack failures pass through to the
 // original event machinery unchanged.
 //
-// Ref: https://github.com/NVIDIA/NemoClaw/issues/2340
+// Ref: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/2340
 
 (function () {
   'use strict';

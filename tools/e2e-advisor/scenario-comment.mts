@@ -82,8 +82,8 @@ export function buildScenarioComment({
   runUrl?: string;
   marker?: string;
 }): string {
-  const required = Array.isArray(result?.required) ? result.required : [];
-  const optional = Array.isArray(result?.optional) ? result.optional : [];
+  const required = Array.isArray(result?.required) ? result!.required : [];
+  const optional = Array.isArray(result?.optional) ? result!.optional : [];
   const requiredLine = recommendationLine(required);
   const optionalLine = recommendationLine(optional);
   const dispatch =

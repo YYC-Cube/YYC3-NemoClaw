@@ -940,18 +940,20 @@ export function filterSafeUpdates(updates: SessionUpdates): Partial<Session> {
     safe.hermesToolGateways = null;
   } else if (Array.isArray(updates.hermesToolGateways)) {
     safe.hermesToolGateways = updates.hermesToolGateways.filter(
-      (value) => typeof value === "string",
+      (value): value is string => typeof value === "string",
     );
   }
   if (updates.policyPresets === null) {
     safe.policyPresets = null;
   } else if (Array.isArray(updates.policyPresets)) {
-    safe.policyPresets = updates.policyPresets.filter((value) => typeof value === "string");
+    safe.policyPresets = updates.policyPresets.filter(
+      (value): value is string => typeof value === "string",
+    );
   }
   if (updates.messagingChannels === null) {
     safe.messagingChannels = null;
   } else if (Array.isArray(updates.messagingChannels)) {
-    safe.messagingChannels = updates.messagingChannels.filter((value) => typeof value === "string");
+    safe.messagingChannels = updates.messagingChannels.filter((value): value is string => typeof value === "string");
   }
   if (updates.messagingChannelConfig === null) {
     safe.messagingChannelConfig = null;
@@ -963,7 +965,7 @@ export function filterSafeUpdates(updates: SessionUpdates): Partial<Session> {
     safe.disabledChannels = null;
   } else if (Array.isArray(updates.disabledChannels)) {
     safe.disabledChannels = updates.disabledChannels.filter(
-      (value) => typeof value === "string",
+      (value): value is string => typeof value === "string",
     );
   }
   if (isObject(updates.migratedLegacyValueHashes)) {

@@ -1,7 +1,7 @@
 {
   "$comment": "SPDX-FileCopyrightText: Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved. SPDX-License-Identifier: Apache-2.0",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/NVIDIA/NemoClaw/nemoclaw-blueprint/model-specific-setup/schema.json",
+  "$id": "https://github.com/YYC-Cube/YYC3-NemoClaw/nemoclaw-blueprint/model-specific-setup/schema.json",
   "title": "NemoClaw Model-Specific Setup Manifest",
   "type": "object",
   "additionalProperties": false,

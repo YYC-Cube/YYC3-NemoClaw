@@ -198,7 +198,7 @@ flowchart LR
 ## Sandbox Environment
 
 Normal NemoClaw onboarding builds from the
-[`ghcr.io/nvidia/nemoclaw/sandbox-base`](https://github.com/NVIDIA/NemoClaw/pkgs/container/nemoclaw%2Fsandbox-base)
+[`ghcr.io/nvidia/nemoclaw/sandbox-base`](https://github.com/YYC-Cube/YYC3-NemoClaw/pkgs/container/nemoclaw%2Fsandbox-base)
 base image and layers the NemoClaw runtime Dockerfile on top. The direct blueprint
 runner still carries a pinned OpenShell Community OpenClaw image for legacy
 `openshell sandbox create --from` compatibility. Inside the sandbox:

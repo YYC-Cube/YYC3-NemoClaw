@@ -2886,11 +2886,14 @@ async function createSandbox(
   // channels the user selected. When null (backward compat), include all.
   const enabledEnvKeys =
     enabledChannels != null
-      ? new Set(
-          MESSAGING_CHANNELS.filter((c) => enabledChannels.includes(c.name)).flatMap((c) =>
-            getChannelTokenKeys(c),
-          ),
-        )
+      ? (() => {
+          const ec = enabledChannels!;
+          return new Set(
+            MESSAGING_CHANNELS.filter((c) => ec.includes(c.name)).flatMap((c) =>
+              getChannelTokenKeys(c),
+            ),
+          );
+        })()
       : null;
 
   // Drop channels the operator disabled via `nemoclaw <sandbox> channels stop`.
@@ -4572,7 +4575,7 @@ async function setupNim(
                 // causing the model to receive no system prompt or tool
                 // definitions. Chat completions uses the `system` role which
                 // is universally supported.
-                // See: https://github.com/NVIDIA/NemoClaw/issues/1932
+                // See: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/1932
                 const explicitApi = (process.env.NEMOCLAW_PREFERRED_API || "").trim().toLowerCase();
                 if (
                   explicitApi &&

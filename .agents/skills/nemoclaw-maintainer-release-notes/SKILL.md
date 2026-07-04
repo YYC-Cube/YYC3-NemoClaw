@@ -33,7 +33,7 @@ Create a local Markdown draft. Do not create or update a GitHub Discussion; the 
 Identify the current release tag and previous release tag. If the user gives only the current version, derive the previous semver tag from remote tags.
 
 ```bash
-git ls-remote https://github.com/NVIDIA/NemoClaw.git \
+git ls-remote https://github.com/YYC-Cube/YYC3-NemoClaw.git \
   refs/heads/main \
   refs/tags/<previous-version> 'refs/tags/<previous-version>^{}' \
   refs/tags/<current-version> 'refs/tags/<current-version>^{}' \
@@ -72,7 +72,7 @@ For each included item, write:
 
 - what changed,
 - why it matters or why we did it,
-- a visible PR link like `[#4474](https://github.com/NVIDIA/NemoClaw/pull/4474)`.
+- a visible PR link like `[#4474](https://github.com/YYC-Cube/YYC3-NemoClaw/pull/4474)`.
 
 Be careful with sensitive internal cleanup:
 
@@ -122,11 +122,11 @@ Replay PRs need special care:
 Example:
 
 ```markdown
-- [#4474](https://github.com/NVIDIA/NemoClaw/pull/4474) replays and narrows the Hermes Provider host-smoke fix originally contributed by @shannonsands in [#4385](https://github.com/NVIDIA/NemoClaw/pull/4385). ...
+- [#4474](https://github.com/YYC-Cube/YYC3-NemoClaw/pull/4474) replays and narrows the Hermes Provider host-smoke fix originally contributed by @shannonsands in [#4385](https://github.com/YYC-Cube/YYC3-NemoClaw/pull/4385). ...
 
 ## Thank you
 
-Thank you to external contributor @shannonsands for the original Hermes Provider smoke-check contribution in [#4385](https://github.com/NVIDIA/NemoClaw/pull/4385), which was replayed and narrowed into [#4474](https://github.com/NVIDIA/NemoClaw/pull/4474) for this release.
+Thank you to external contributor @shannonsands for the original Hermes Provider smoke-check contribution in [#4385](https://github.com/YYC-Cube/YYC3-NemoClaw/pull/4385), which was replayed and narrowed into [#4474](https://github.com/YYC-Cube/YYC3-NemoClaw/pull/4474) for this release.
 ```
 
 ## Step 6: Draft the Narrative

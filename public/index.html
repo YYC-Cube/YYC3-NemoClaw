@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YYC³ NemoClaw — 更安全、全天候的 AI 助手</title>
+  <style>
+    :root {
+      --bg: #0b0d11;
+      --fg: #e4e6ed;
+      --accent: #76b900;
+      --muted: #8a8f9d;
+      --card: #14171c;
+      --border: #22252b;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans SC", sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .container { max-width: 720px; text-align: center; }
+    .logo { display: flex; align-items: center; justify-content: center; gap: 0.75rem; margin-bottom: 2rem; }
+    .logo img { width: 48px; height: 48px; border-radius: 12px; }
+    .logo h1 { font-size: 1.8rem; font-weight: 700; color: var(--fg); }
+    .logo span { color: var(--accent); }
+    .tagline { font-size: 1.15rem; color: var(--muted); margin-bottom: 2.5rem; }
+    .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2.5rem; }
+    @media (max-width: 600px) { .cards { grid-template-columns: 1fr; } }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      text-align: left;
+    }
+    .card h3 { font-size: 0.95rem; color: var(--accent); margin-bottom: 0.4rem; }
+    .card p { font-size: 0.85rem; color: var(--muted); }
+    .badge {
+      display: inline-block;
+      background: var(--accent);
+      color: #000;
+      font-weight: 600;
+      font-size: 0.75rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+    }
+    .links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.9rem;
+      padding: 0.5rem 1.25rem;
+      border: 1px solid var(--accent);
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+    .links a:hover { background: var(--accent); color: #000; }
+    .footer { margin-top: 3rem; font-size: 0.8rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="Family-AI-001.png" alt="YYC³ Logo" />
+      <h1><span>YYC³</span> NemoClaw</h1>
+    </div>
+
+    <div class="badge">v0.1.0 · 基于 NVIDIA OpenShell + OpenClaw</div>
+    <p class="tagline">
+      一条命令部署更安全、全天候的 AI 助手。<br />
+      沙箱隔离 · 策略防护 · 推理路由 · 多智能体
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <h3>🔒 沙箱隔离</h3>
+        <p>Landlock + seccomp 内核级文件系统与系统调用过滤，deny-by-default 网络策略。</p>
+      </div>
+      <div class="card">
+        <h3>🧠 推理路由</h3>
+        <p>NVIDIA NIM · Ollama · vLLM · MLX · OpenAI 兼容 — 零代码切换提供商与模型。</p>
+      </div>
+      <div class="card">
+        <h3>🤖 多智能体</h3>
+        <p>YYC³ Family：千行🧭 · 天枢⭐ · 万物🌱 · 宗师🏆 · 守护🛡️ · 先知📊 · 伯乐🎯 · 灵韵💡</p>
+      </div>
+      <div class="card">
+        <h3>🌐 国际化</h3>
+        <p>基于 @yyc3/i18n-core 的完整 i18n 框架，MCP 翻译工具集，10 种语言支持。</p>
+      </div>
+    </div>
+
+    <div class="links">
+      <a href="https://github.com/YYC-Cube/YYC3-NemoClaw">GitHub</a>
+      <a href="https://docs.nvidia.com/nemoclaw">Documentation</a>
+      <a href="https://github.com/YYC-Cube/YYC3-NemoClaw/blob/main/AGENTS.md">For AI Agents</a>
+    </div>
+
+    <p class="footer">
+      Powered by NVIDIA OpenShell · Nemotron · Agent Toolkit<br />
+      YYC³ Team &copy; 2026
+    </p>
+  </div>
+</body>
+</html>

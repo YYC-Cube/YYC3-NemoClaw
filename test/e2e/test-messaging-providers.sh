@@ -82,7 +82,7 @@
 #   NEMOCLAW_NON_INTERACTIVE=1 NEMOCLAW_ACCEPT_THIRD_PARTY_SOFTWARE=1 \
 #     NVIDIA_API_KEY=nvapi-... bash test/e2e/test-messaging-providers.sh
 #
-# See: https://github.com/NVIDIA/NemoClaw/pull/1081
+# See: https://github.com/YYC-Cube/YYC3-NemoClaw/pull/1081
 
 set -uo pipefail
 

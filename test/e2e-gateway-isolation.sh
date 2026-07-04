@@ -508,7 +508,7 @@ fi
 # ── Test 28: Model override patches openclaw.json at startup ─────
 # NEMOCLAW_MODEL_OVERRIDE should patch agents.defaults.model.primary,
 # model id, and model name in openclaw.json before Landlock locks it.
-# Ref: https://github.com/NVIDIA/NemoClaw/issues/759
+# Ref: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/759
 
 info "28. NEMOCLAW_MODEL_OVERRIDE patches openclaw.json"
 OUT=$(docker run --rm -e NEMOCLAW_MODEL_OVERRIDE="test/override-model" \

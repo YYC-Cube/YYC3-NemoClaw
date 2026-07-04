@@ -123,7 +123,7 @@ configure_jetson_host() {
       # Patch /etc/docker/daemon.json using Python to avoid generating invalid JSON.
       # The previous sed approach stripped the trailing comma from
       # "default-runtime": "nvidia", which produced malformed JSON when
-      # "runtimes" was the next key. See: https://github.com/NVIDIA/NemoClaw/issues/1875
+      # "runtimes" was the next key. See: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/1875
       "${SUDO[@]}" python3 --version >/dev/null 2>&1 \
         || error "python3 is required to patch /etc/docker/daemon.json but was not found on PATH"
       "${SUDO[@]}" python3 - /etc/docker/daemon.json <<'PYEOF'

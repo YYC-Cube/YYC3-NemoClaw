@@ -7,25 +7,36 @@ import path from "node:path";
 
 import { loadAgent, type AgentDefinition } from "../../agent/defs";
 import { CLI_DISPLAY_NAME, CLI_NAME } from "../../cli/branding";
-import { hashCredential } from "../../security/credential-hash";
-import { getCredential, prompt as askPrompt } from "../../credentials/store";
+import { prompt as askPrompt, getCredential } from "../../credentials/store";
 import { recoverNamedGatewayRuntime } from "../../gateway-runtime-action";
+import * as policies from "../../policy";
+import { hashCredential } from "../../security/credential-hash";
 const { isNonInteractive } = require("../../onboard") as { isNonInteractive: () => boolean };
 const onboardProviders = require("../../onboard/providers");
-import * as policies from "../../policy";
 // Lazy-required: keeps qrcode-terminal + the iLink HTTP client out of the
 // import graph for non-host-qr channels-add calls.
 const { HOST_QR_LOGIN_HANDLERS } = require("../../host-qr-handlers") as typeof import("../../host-qr-handlers");
 const onboardSession = require("../../state/onboard-session") as typeof import("../../state/onboard-session");
 
+import { runOpenshell } from "../../adapters/openshell/runtime";
 import {
   parsePolicyAddOptions,
   type PolicyAddOptions,
   type PolicyRemoveOptions,
 } from "../../domain/policy-channel";
-import * as registry from "../../state/registry";
-import { runOpenshell } from "../../adapters/openshell/runtime";
+import type { HostQrLoginResult } from "../../host-qr-handlers";
 import { shellQuote } from "../../runner";
+import {
+  channelUsesInSandboxQrPairing,
+  clearChannelTokens,
+  getChannelDef,
+  getChannelTokenKeys,
+  KNOWN_CHANNELS,
+  knownChannelNames,
+  persistChannelTokens,
+  type ChannelDef,
+} from "../../sandbox/channels";
+import * as registry from "../../state/registry";
 import {
   isDockerRuntimeDown,
   printDockerRuntimeDownGuidance,
@@ -34,17 +45,6 @@ import { executeSandboxCommand, executeSandboxExecCommand } from "./process-reco
 import { rebuildSandbox } from "./rebuild";
 import { validateSlackChannelCredentials } from "./slack-channel-validation";
 import { printTelegramDirectMessageAllowlistWarning } from "./telegram-channel-bridge-verification";
-import {
-  type ChannelDef,
-  KNOWN_CHANNELS,
-  channelUsesInSandboxQrPairing,
-  clearChannelTokens,
-  getChannelDef,
-  getChannelTokenKeys,
-  knownChannelNames,
-  persistChannelTokens,
-} from "../../sandbox/channels";
-import type { HostQrLoginResult } from "../../host-qr-handlers";
 
 type ChannelMutationOptions = {
   channel?: string;
@@ -117,7 +117,7 @@ export async function addSandboxPolicy(
   const allPresets = policies.listPresets();
   const applied = policies.getAppliedPresets(sandboxName);
 
-  let answer = null;
+  let answer: string | null = null;
   if (presetArg) {
     const normalized = presetArg.trim().toLowerCase();
     const preset = allPresets.find((item: { name: string }) => item.name === normalized);
@@ -963,8 +963,7 @@ async function rollbackChannelAdd(
         });
       } catch (err) {
         console.error(
-          `  ${YW}⚠${R} Failed to restore gateway providers for '${canonical}': ${
-            err instanceof Error ? err.message : String(err)
+          `  ${YW}⚠${R} Failed to restore gateway providers for '${canonical}': ${err instanceof Error ? err.message : String(err)
           }`,
         );
       }
@@ -1190,7 +1189,7 @@ export async function removeSandboxChannel(
   }
   const sessionPolicyPresets =
     sessionForSandbox?.sandboxName === sandboxName &&
-    Array.isArray(sessionForSandbox.policyPresets)
+      Array.isArray(sessionForSandbox.policyPresets)
       ? sessionForSandbox.policyPresets
       : [];
   const hasChannelResidue =
@@ -1316,7 +1315,7 @@ export async function removeSandboxPolicy(
   const applied = policies.getAppliedPresets(sandboxName);
 
   const presetArg = options.preset;
-  let answer = null;
+  let answer: string | null = null;
   if (presetArg) {
     const normalized = presetArg.trim().toLowerCase();
     const preset = allPresets.find((item: { name: string }) => item.name === normalized);

@@ -158,7 +158,7 @@ Each workspace is independent; changes in one don't propagate. Operators that
 need this either copy the shared files explicitly to each workspace after
 editing, or maintain a host-side sync layer. Tracking shared-file tooling
 (shared mount, `workspaces list` command) in
-[#1260](https://github.com/NVIDIA/NemoClaw/issues/1260).
+[#1260](https://github.com/YYC-Cube/YYC3-NemoClaw/issues/1260).
 
 ## Next Steps
 

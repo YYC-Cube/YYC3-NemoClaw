@@ -336,7 +336,7 @@ if [ "$VERDICT" = "fixed-on-latest" ]; then
   # issues automatically, but cover the gap.)
   if [ -z "$ITEM_ID" ]; then
     ITEM_ID=$(gh project item-add 199 --owner NVIDIA \
-      --url "https://github.com/NVIDIA/NemoClaw/issues/$ISSUE_NUMBER" \
+      --url "https://github.com/YYC-Cube/YYC3-NemoClaw/issues/$ISSUE_NUMBER" \
       --format json --jq .id 2>/dev/null)
   fi
 

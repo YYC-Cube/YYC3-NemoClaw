@@ -480,7 +480,7 @@ describe("permissive sandbox policy", () => {
   // so the mental model stays consistent with the base policy and so we
   // don't silently depend on OpenShell's implicit allow for
   // gateway-bound virtual hostnames.
-  // Ref: https://github.com/NVIDIA/NemoClaw/issues/2513, #2663
+  // Ref: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/2513, #2663
   const policy = loadYaml<SandboxPolicy>(PERMISSIVE_POLICY_PATH);
 
   it("parses and declares network_policies", () => {

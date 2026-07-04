@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 // Unit tests for routed (Model Router) provider endpoint normalization and
-// upsert. See: https://github.com/NVIDIA/NemoClaw/issues/4564
+// upsert. See: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/4564
 
 import { describe, expect, it, vi } from "vitest";
 

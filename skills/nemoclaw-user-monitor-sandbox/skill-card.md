@@ -19,7 +19,7 @@ Risk: Review before execution as proposals could introduce incorrect or misleadi
 Mitigation: Review and scan skill before deployment. <br>
 
 ## Reference(s): <br>
-- [NVIDIA NemoClaw GitHub Repository](https://github.com/NVIDIA/NemoClaw) <br>
+- [YYC3 NemoClaw GitHub Repository](https://github.com/YYC-Cube/YYC3-NemoClaw) <br>
 
 
 ## Skill Output: <br>

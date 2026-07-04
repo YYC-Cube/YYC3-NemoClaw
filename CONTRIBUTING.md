@@ -26,14 +26,14 @@ Security vulnerabilities must follow [SECURITY.md](SECURITY.md) — **not** GitH
 
 ## Where to Start
 
-New contributors should start with issues labeled [`good first issue`](https://github.com/NVIDIA/NemoClaw/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22). These are scoped tasks with clear acceptance criteria that do not require deep project knowledge.
+New contributors should start with issues labeled [`good first issue`](https://github.com/YYC-Cube/YYC3-NemoClaw/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22). These are scoped tasks with clear acceptance criteria that do not require deep project knowledge.
 
 Before starting larger work:
 
 - Search open issues and pull requests to avoid duplicates.
-- Start a [GitHub Discussion](https://github.com/NVIDIA/NemoClaw/discussions) before writing code for significant changes.
+- Start a [GitHub Discussion](https://github.com/YYC-Cube/YYC3-NemoClaw/discussions) before writing code for significant changes.
 - Open an issue after the proposal has enough scope and design detail for maintainer review.
-- For questions, open a [GitHub Discussion](https://github.com/NVIDIA/NemoClaw/discussions) or comment on a related issue.
+- For questions, open a [GitHub Discussion](https://github.com/YYC-Cube/YYC3-NemoClaw/discussions) or comment on a related issue.
 
 ## Before You Open an Issue
 
@@ -43,7 +43,7 @@ Open an issue when you encounter one of the following situations.
 - A feature proposal with a design — not a "please build this" request.
 - Security vulnerabilities must follow [SECURITY.md](SECURITY.md) — **not** GitHub issues.
 
-Use [GitHub Discussions](https://github.com/NVIDIA/NemoClaw/discussions) for questions, design exploration, and larger feature proposals before implementation.
+Use [GitHub Discussions](https://github.com/YYC-Cube/YYC3-NemoClaw/discussions) for questions, design exploration, and larger feature proposals before implementation.
 Maintainers may ask you to move broad or still-forming proposals from an issue to a discussion so the design can settle before code review.
 
 ## Community Response Expectations

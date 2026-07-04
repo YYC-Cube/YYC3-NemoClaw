@@ -11,8 +11,8 @@
 // (#2020 invariant) — when the docker daemon is itself flaky, destroying and
 // recreating the gateway cannot succeed anyway.
 //
-// See: https://github.com/NVIDIA/NemoClaw/issues/3258
-// Regression of: https://github.com/NVIDIA/NemoClaw/issues/2020
+// See: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/3258
+// Regression of: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/2020
 
 import http from "node:http";
 import http2 from "node:http2";

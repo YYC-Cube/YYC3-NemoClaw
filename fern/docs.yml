@@ -47,7 +47,7 @@ css:
 
 navbar-links:
   - type: github
-    value: https://github.com/NVIDIA/NemoClaw
+    value: https://github.com/YYC-Cube/YYC3-NemoClaw
 
 experimental:
   mdx-components:

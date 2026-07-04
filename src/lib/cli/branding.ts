@@ -51,6 +51,12 @@ const AGENT_PRODUCT_BRANDING: Record<string, ProductBranding> = {
     product: "Hermes",
     uninstallGoodbye: "Hermes has left the tidepool.",
   },
+  // YYC³ 自研 Agent 品牌
+  yyc3: {
+    display: "YYC³ NemoClaw",
+    product: "YYC³ AI Family",
+    uninstallGoodbye: "YYC³ AI Family 已离线。期待下次协同。",
+  },
 };
 
 const DEFAULT_AGENT = "openclaw";
@@ -63,6 +69,12 @@ function resolveInvokedCliName(): string {
     return raw;
   }
   return DEFAULT_CLI_NAME;
+}
+
+/** 检测是否为中文语言环境 */
+export function isChineseEnvironment(): boolean {
+  const lang = process.env.LANG || process.env.LC_ALL || process.env.LC_MESSAGES || "";
+  return /^zh/i.test(lang);
 }
 
 export function getAgentBranding(

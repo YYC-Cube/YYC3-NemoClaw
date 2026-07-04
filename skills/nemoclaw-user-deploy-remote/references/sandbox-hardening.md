@@ -120,8 +120,8 @@ The `test/e2e/e2e-cloud-experimental/checks/04-landlock-readonly.sh` script vali
 
 ## References
 
-- [#804](https://github.com/NVIDIA/NemoClaw/issues/804): Filesystem layout and Landlock policy
-- [#807](https://github.com/NVIDIA/NemoClaw/issues/807): gcc in sandbox image
-- [#808](https://github.com/NVIDIA/NemoClaw/issues/808): netcat in sandbox image
-- [#809](https://github.com/NVIDIA/NemoClaw/issues/809): No process limit
-- [#797](https://github.com/NVIDIA/NemoClaw/issues/797): Drop Linux capabilities
+- [#804](https://github.com/YYC-Cube/YYC3-NemoClaw/issues/804): Filesystem layout and Landlock policy
+- [#807](https://github.com/YYC-Cube/YYC3-NemoClaw/issues/807): gcc in sandbox image
+- [#808](https://github.com/YYC-Cube/YYC3-NemoClaw/issues/808): netcat in sandbox image
+- [#809](https://github.com/YYC-Cube/YYC3-NemoClaw/issues/809): No process limit
+- [#797](https://github.com/YYC-Cube/YYC3-NemoClaw/issues/797): Drop Linux capabilities

@@ -52,7 +52,7 @@ landlock:
 # `tool_policy` section (serde deny_unknown_fields — only version, filesystem_policy,
 # landlock, process, network_policies are accepted). Config protection when
 # shields are up is achieved via DAC (444 root:root) and chattr +i.
-# Ref: https://github.com/NVIDIA/NemoClaw/pull/654#pullrequestreview-…
+# Ref: https://github.com/YYC-Cube/YYC3-NemoClaw/pull/654#pullrequestreview-…
 
 process:
   run_as_user: sandbox
@@ -90,7 +90,7 @@ network_policies:
   # the gateway proxies it to the configured provider (OpenAI, NVIDIA, etc.).
   # Every sandbox uses this route regardless of provider, so it belongs in
   # the base policy rather than an optional preset.
-  # Ref: https://github.com/NVIDIA/NemoClaw/issues/2663
+  # Ref: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/2663
   managed_inference:
     name: managed_inference
     endpoints:
@@ -164,7 +164,7 @@ network_policies:
   # npm registry — needed for `openclaw plugins install` only.
   # Restricted to the openclaw binary so agents cannot use npm directly.
   # Users who need npm/node access should add the npm policy preset during onboard.
-  # Ref: https://github.com/NVIDIA/NemoClaw/issues/1458
+  # Ref: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/1458
   npm_registry:
     name: npm_registry
     endpoints:

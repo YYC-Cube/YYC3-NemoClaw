@@ -81,7 +81,7 @@ export function resolveSandboxDashboardPort(
 
   const getSandbox = deps.getSandbox ?? registry.getSandbox;
   const sandbox = getSandbox(sandboxName);
-  return isValidPort(sandbox?.dashboardPort) ? sandbox.dashboardPort : DASHBOARD_PORT;
+  return sandbox && isValidPort(sandbox.dashboardPort) ? sandbox.dashboardPort : DASHBOARD_PORT;
 }
 
 function getSandboxHealthProbeUrl(sandboxName: string): string {

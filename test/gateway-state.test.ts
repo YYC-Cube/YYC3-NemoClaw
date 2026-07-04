@@ -3,7 +3,7 @@
 //
 // Unit tests for gateway-state.ts classifiers.
 // Covers ARM64/non-TTY fallback paths where `openshell status` returns empty output.
-// See: https://github.com/NVIDIA/NemoClaw/issues/1711
+// See: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/1711
 
 import { describe, it, expect } from "vitest";
 import {

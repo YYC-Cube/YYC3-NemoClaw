@@ -3,7 +3,7 @@
 //
 // Unit tests for the sandbox-side Ollama auth proxy reachability probe.
 //
-// See: https://github.com/NVIDIA/NemoClaw/issues/3340
+// See: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/3340
 
 import { describe, expect, it, vi } from "vitest";
 

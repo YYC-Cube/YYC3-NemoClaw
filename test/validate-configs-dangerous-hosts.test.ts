@@ -7,7 +7,7 @@
 // This suite covers the additional semantic check that rejects catch-all hosts
 // ("*", "0.0.0.0/0", "::/0", etc.) which Schema can't express natively.
 //
-// Ref: https://github.com/NVIDIA/NemoClaw/issues/1445
+// Ref: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/1445
 
 import { describe, expect, it } from "vitest";
 

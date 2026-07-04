@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/NVIDIA/NemoClaw/schemas/blueprint.schema.json",
+  "$id": "https://github.com/YYC-Cube/YYC3-NemoClaw/schemas/blueprint.schema.json",
   "title": "NemoClaw Blueprint",
   "description": "Schema for nemoclaw-blueprint/blueprint.yaml — defines sandbox orchestration, inference profiles, and policy configuration.",
   "type": "object",

@@ -65,9 +65,9 @@ clone_nemoclaw_ref() {
   local ref="$1" dest="$2"
 
   git init --quiet "$dest"
-  git -C "$dest" remote add origin https://github.com/NVIDIA/NemoClaw.git
+  git -C "$dest" remote add origin https://github.com/YYC-Cube/YYC3-NemoClaw.git
   if ! git -C "$dest" fetch --quiet --depth 1 origin "$ref"; then
-    printf "[ERROR] Requested install ref '%s' is not available from https://github.com/NVIDIA/NemoClaw.git.\n" "$ref" >&2
+    printf "[ERROR] Requested install ref '%s' is not available from https://github.com/YYC-Cube/YYC3-NemoClaw.git.\n" "$ref" >&2
     printf "        Check NEMOCLAW_INSTALL_TAG/NEMOCLAW_INSTALL_REF and try again.\n" >&2
     exit 1
   fi

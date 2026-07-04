@@ -270,7 +270,7 @@ export function cleanupSandboxServices(
  * `shields up` survives destroy → re-onboard and causes
  * `deriveShieldsMode` to report "locked" on a fresh sandbox.
  *
- * See: https://github.com/NVIDIA/NemoClaw/issues/3114
+ * See: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/3114
  */
 export function removeShieldsState(
   sandboxName: string,

@@ -6,7 +6,7 @@ This page covers common issues you may encounter when installing, onboarding, or
 
 **Get Help:**
 
-If your issue is not listed here, join the [NemoClaw Discord channel](https://discord.gg/XFpfPv9Uvx) to ask questions and get help from the community. You can also [file an issue on GitHub](https://github.com/NVIDIA/NemoClaw/issues/new).
+If your issue is not listed here, join the [NemoClaw Discord channel](https://discord.gg/XFpfPv9Uvx) to ask questions and get help from the community. You can also [file an issue on GitHub](https://github.com/YYC-Cube/YYC3-NemoClaw/issues/new).
 
 ## Installation
 
@@ -1141,7 +1141,7 @@ http://host.openshell.internal:11435/v1
 `11435` there and forwards requests to `127.0.0.1:11434` on the host.
 If you need a different host service exposed to the sandbox, route it through
 the OpenShell gateway rather than relying on `host.docker.internal`.
-See issue [#3136](https://github.com/NVIDIA/NemoClaw/issues/3136).
+See issue [#3136](https://github.com/YYC-Cube/YYC3-NemoClaw/issues/3136).
 
 ### Local inference health check resolves to IPv6
 
@@ -1552,7 +1552,7 @@ Configure Hermes web search from the agent's own configuration inside the sandbo
 ### Re-onboarding asks every messaging prompt again
 
 `nemohermes onboard --resume` against a Hermes sandbox that was originally onboarded with Telegram, Discord, and Slack credentials re-prompts for each channel's bot token and per-channel settings rather than reusing the stored values.
-This is tracked in [#3581](https://github.com/NVIDIA/NemoClaw/issues/3581).
+This is tracked in [#3581](https://github.com/YYC-Cube/YYC3-NemoClaw/issues/3581).
 For unattended re-onboards, export the messaging env vars first so the wizard skips the prompts:
 
 ```console

@@ -4,13 +4,13 @@
 import * as credentials from "../credentials/store";
 import {
   BACK_TO_SELECTION,
-  type BackToSelection,
   isBackToSelection,
+  type BackToSelection,
 } from "../navigation";
 
 export type BackNavigationResult = BackToSelection | { kind: "back" };
-export type { BackToSelection };
 export { BACK_TO_SELECTION, isBackToSelection };
+export type { BackToSelection };
 
 export function getNavigationChoice(value = ""): "back" | "exit" | null {
   const normalized = String(value || "")
@@ -153,7 +153,8 @@ export function createCredentialPromptHelpers(exitOnboardFromPrompt: () => never
       ensureNamedCredential({ envName, label, helpUrl, exitOnboardFromPrompt }),
     shouldReturnToProviderSelection: (result) =>
       shouldReturnToProviderSelection(result, exitOnboardFromPrompt),
-    returningToProviderSelection: (result) =>
-      returningToProviderSelection(result, exitOnboardFromPrompt),
+    returningToProviderSelection: ((result): result is BackNavigationResult =>
+      returningToProviderSelection(result, exitOnboardFromPrompt)) as
+      (result: unknown) => result is BackNavigationResult,
   };
 }

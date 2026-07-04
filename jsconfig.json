@@ -3,6 +3,7 @@
     "target": "ES2022",
     "module": "ES2022",
     "moduleResolution": "bundler",
+    "lib": ["ES2022"],
     "checkJs": true,
     "allowJs": true,
     "maxNodeModuleJsDepth": 0,
@@ -14,6 +15,6 @@
     "noImplicitAny": false,
     "types": ["node"]
   },
-  "include": ["bin/**/*.js", "scripts/**/*.js", "test/**/*.js"],
+  "include": ["bin/**/*.js", "scripts/**/*.js", "test/**/*.js", "src/**/*.ts"],
   "exclude": ["node_modules", "**/node_modules", "nemoclaw", "docs"]
 }

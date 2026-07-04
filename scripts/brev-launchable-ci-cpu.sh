@@ -34,8 +34,8 @@
 #   SKIP_DOCKER_PULL      — Set to 1 to skip Docker image pre-pulls
 #
 # Related:
-#   - Epic: https://github.com/NVIDIA/NemoClaw/issues/1326
-#   - Issue: https://github.com/NVIDIA/NemoClaw/issues/1327
+#   - Epic: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/1326
+#   - Issue: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/1327
 
 set -euo pipefail
 
@@ -240,7 +240,7 @@ if [[ -d "$NEMOCLAW_CLONE_DIR/.git" ]]; then
 else
   info "Cloning NemoClaw (ref: $NEMOCLAW_REF)..."
   git clone --branch "$NEMOCLAW_REF" --depth 1 \
-    "https://github.com/NVIDIA/NemoClaw.git" "$NEMOCLAW_CLONE_DIR"
+    "https://github.com/YYC-Cube/YYC3-NemoClaw.git" "$NEMOCLAW_CLONE_DIR"
 fi
 
 # ── Start Docker image pulls in the background ─────────────────────

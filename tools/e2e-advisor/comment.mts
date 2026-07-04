@@ -70,8 +70,8 @@ function buildComment({
   runUrl?: string;
   marker: string;
 }): string {
-  const requiredTests = Array.isArray(result?.requiredTests) ? result.requiredTests : [];
-  const optionalTests = Array.isArray(result?.optionalTests) ? result.optionalTests : [];
+  const requiredTests = Array.isArray(result?.requiredTests) ? result!.requiredTests : [];
+  const optionalTests = Array.isArray(result?.optionalTests) ? result!.optionalTests : [];
   const requiredLine = requiredTests.length > 0
     ? requiredTests.map((test) => `\`${test.id}\``).join(", ")
     : "_None_";

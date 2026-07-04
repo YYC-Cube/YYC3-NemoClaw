@@ -116,11 +116,11 @@ Mandatory sections in this order. Omit only the sections explicitly noted as omi
 
 Use these exact link formats:
 
-- File only: `[src/lib/onboard.ts](https://github.com/NVIDIA/NemoClaw/blob/v0.0.35/src/lib/onboard.ts)`
-- File:line: `[src/lib/onboard.ts:4965](https://github.com/NVIDIA/NemoClaw/blob/v0.0.35/src/lib/onboard.ts#L4965)`
-- File:line-range: `[src/lib/commands/sandbox/connect.ts:25-31](https://github.com/NVIDIA/NemoClaw/blob/v0.0.35/src/lib/commands/sandbox/connect.ts#L25-L31)`
-- Commit SHA: `[5956a61](https://github.com/NVIDIA/NemoClaw/commit/5956a612e18047b9ab85b3a7e89f6b5dedb29190)` — short SHA as the link text, full SHA in the URL
-- Test file: `[test/e2e/test-double-onboard.sh](https://github.com/NVIDIA/NemoClaw/blob/v0.0.35/test/e2e/test-double-onboard.sh)`
+- File only: `[src/lib/onboard.ts](https://github.com/YYC-Cube/YYC3-NemoClaw/blob/v0.0.35/src/lib/onboard.ts)`
+- File:line: `[src/lib/onboard.ts:4965](https://github.com/YYC-Cube/YYC3-NemoClaw/blob/v0.0.35/src/lib/onboard.ts#L4965)`
+- File:line-range: `[src/lib/commands/sandbox/connect.ts:25-31](https://github.com/YYC-Cube/YYC3-NemoClaw/blob/v0.0.35/src/lib/commands/sandbox/connect.ts#L25-L31)`
+- Commit SHA: `[5956a61](https://github.com/YYC-Cube/YYC3-NemoClaw/commit/5956a612e18047b9ab85b3a7e89f6b5dedb29190)` — short SHA as the link text, full SHA in the URL
+- Test file: `[test/e2e/test-double-onboard.sh](https://github.com/YYC-Cube/YYC3-NemoClaw/blob/v0.0.35/test/e2e/test-double-onboard.sh)`
 - PR/issue references: bare `#NNNN` works — GitHub auto-links these in comments on the same repo, no manual URL needed.
 
 When grepping for evidence, use `git grep -n "<symbol>" "$LATEST" -- ...` so the line numbers match the tagged blob. Then construct each link from `<file path> + verified-on tag + line number`.

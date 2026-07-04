@@ -135,7 +135,7 @@ Use the exact template structure below. Fill in each section based on the diff (
 - [ ] No secrets, API keys, or credentials committed
 - [ ] Docs updated for user-facing behavior changes
 - [ ] `npm run docs` builds without warnings (doc changes only)
-- [ ] Doc pages follow the [style guide](https://github.com/NVIDIA/NemoClaw/blob/main/docs/CONTRIBUTING.md) (doc changes only)
+- [ ] Doc pages follow the [style guide](https://github.com/YYC-Cube/YYC3-NemoClaw/blob/main/docs/CONTRIBUTING.md) (doc changes only)
 - [ ] New doc pages include SPDX header and frontmatter (new pages only)
 
 ---
@@ -190,7 +190,7 @@ gh pr create --draft --title "..." --assignee "@me" --body "..."
 After the PR is created, display the PR URL as a clickable markdown link:
 
 ```text
-Created PR [#NNN](https://github.com/NVIDIA/NemoClaw/pull/NNN)
+Created PR [#NNN](https://github.com/YYC-Cube/YYC3-NemoClaw/pull/NNN)
 ```
 
 ## Common Mistakes to Avoid

@@ -8,7 +8,7 @@
  * content (markdown, plain text). Tuned for high confidence — patterns are
  * anchored to known prefixes/formats to keep false positives low.
  *
- * Ref: https://github.com/NVIDIA/NemoClaw/issues/1233
+ * Ref: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/1233
  */
 
 export interface SecretMatch {

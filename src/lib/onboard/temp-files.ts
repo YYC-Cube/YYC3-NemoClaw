@@ -9,7 +9,7 @@ import path from "node:path";
  * Create a temp file inside a directory with a cryptographically random name.
  * Uses fs.mkdtempSync (OS-level mkdtemp) to avoid predictable filenames that
  * could be exploited via symlink attacks on shared /tmp.
- * Ref: https://github.com/NVIDIA/NemoClaw/issues/1093
+ * Ref: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/1093
  */
 function validateTempPrefix(prefix: string): string {
   if (

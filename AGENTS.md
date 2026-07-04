@@ -202,3 +202,62 @@ All hooks managed by [prek](https://prek.j178.dev/) (installed via `npm install`
 - Update docs for any user-facing behavior changes
 - No secrets, API keys, or credentials committed
 - Limit open PRs to fewer than 10
+
+## Internationalization (i18n)
+
+NemoClaw ships with a full internationalization layer based on `@yyc3/i18n-core` (v2.4.0).
+
+### Architecture
+
+| Layer | Location | Purpose |
+|-------|----------|---------|
+| **i18n engine** | `packages/i18n-core/` | Core `I18nEngine` with LRU cache, plugin system, ICU MessageFormat |
+| **CLI wrapper** | `src/lib/i18n/index.ts` | Thin wrapper exposing `t()`, `tGroup()`, `tCommand()` |
+| **Translations** | `src/lib/i18n/locales/` | NemoClaw-specific EN/ZH-CN translation maps |
+| **MCP Server** | `scripts/start-i18n-mcp-server.mjs` | 11 MCP tools for Agent-accessible translation, QA, locale detection |
+| **Startup inject** | `scripts/start-i18n-services.sh` | Injects MCP Server config into `openclaw.json` at sandbox boot |
+| **Blueprint** | `nemoclaw-blueprint/blueprint.yaml` | `yyc3-i18n` inference profile + policy addition |
+
+### CLI Translation
+
+All user-facing CLI strings are centralized in `src/lib/i18n/locales/`:
+
+```typescript
+import { t, tGroup, isChineseLocale } from "../i18n";
+
+t("brand.tagline");                                  // "Deploy more secure..."
+t("help.agentConfigNote", { product: "NemoClaw" }); // interpolation
+t("unknown.key", {}, "Fallback");                    // explicit fallback
+tGroup("Getting Started");                           // "快速入门" (zh-CN)
+```
+
+Language is auto-detected from `LANG`/`LC_ALL` environment variables.
+Override with `setLocale("en")` or `setLocale("zh-CN")`.
+
+### MCP Translation Tools (Agent Skills)
+
+When the sandbox boots, `start-i18n-services.sh` injects the MCP Server into `openclaw.json`. The Agent can then call these tools via `#tools`:
+
+| Tool | Description | Backend |
+|------|-------------|---------|
+| `translate_key` | Look up a translation key | I18nEngine dictionary |
+| `search_translations` | Fuzzy search keys/values across locales | I18nEngine |
+| `ai_translate` | LLM-driven translation | OllamaProvider → `qwen3.6:35b-a3b` |
+| `estimate_quality` | Evaluate translation quality | QualityEstimator |
+| `detect_locale` | Detect text language by character analysis | Rule engine |
+| `list_locales` | List 10 supported languages | Metadata |
+
+### Adding a New Translation
+
+1. Add key-value pairs to `src/lib/i18n/locales/en.ts` and `zh-CN.ts`
+2. The `t()` wrapper automatically resolves nested keys via dot notation
+3. TypeScript compilation validates all call sites (zero-error requirement)
+
+### Environment Variables
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `I18N_OLLAMA_ENDPOINT` | `http://127.0.0.1:11434` | Ollama API endpoint for AI translation |
+| `I18N_OLLAMA_MODEL` | `qwen3.6:35b-a3b` | Model used for LLM translation |
+| `I18N_DEBUG` | (unset) | Set to `1` to enable i18n debug logging |
+| `I18N_SKIP_MCP` | (unset) | Set to `1` to skip MCP Server injection |

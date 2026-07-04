@@ -28,7 +28,7 @@
 // openclaw.json. Verify by pairing on a DGX Spark terminal and confirming the
 // QR fits without this preload.
 //
-// Ref: https://github.com/NVIDIA/NemoClaw/issues/4522
+// Ref: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/4522
 
 (function () {
   'use strict';

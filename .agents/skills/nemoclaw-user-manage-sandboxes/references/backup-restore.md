@@ -219,7 +219,7 @@ Files that operators typically want consistent across every per-agent workspace
 (`AGENTS.md`, shared skills, common templates) are **not** synced automatically.
 Each workspace is independent, and changes in one do not propagate.
 Operators that need this either copy the shared files explicitly to each workspace after editing or maintain a host-side sync layer.
-NVIDIA tracks shared-file tooling (shared mount, `workspaces list` command) in [#1260](https://github.com/NVIDIA/NemoClaw/issues/1260).
+NVIDIA tracks shared-file tooling (shared mount, `workspaces list` command) in [#1260](https://github.com/YYC-Cube/YYC3-NemoClaw/issues/1260).
 
 </AgentOnly>
 <AgentOnly variant="hermes">

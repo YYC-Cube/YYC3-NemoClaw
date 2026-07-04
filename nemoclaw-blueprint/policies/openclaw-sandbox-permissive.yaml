@@ -69,7 +69,7 @@ network_policies:
   #   2. Defense-in-depth if the implicit allow is ever tightened.
   #   3. Self-documentation — readers of this file should not need to
   #      discover the implicit behaviour empirically.
-  # Ref: https://github.com/NVIDIA/NemoClaw/issues/2663, #2513
+  # Ref: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/2663, #2513
   managed_inference:
     name: managed_inference
     endpoints:

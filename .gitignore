@@ -9,6 +9,9 @@ dist/
 docs/_build/
 node_modules/
 
+# Exception: keep i18n-core dist for local package reference
+!packages/i18n-core/dist/
+
 # OS metadata
 .DS_Store
 desktop.ini

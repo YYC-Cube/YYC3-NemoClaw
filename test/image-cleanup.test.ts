@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 // Verify that sandbox lifecycle operations clean up host-side Docker images.
-// See: https://github.com/NVIDIA/NemoClaw/issues/2086
+// See: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/2086
 
 import { describe, it, expect, vi } from "vitest";
 import fs from "node:fs";

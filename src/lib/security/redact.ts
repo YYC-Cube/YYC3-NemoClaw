@@ -13,7 +13,7 @@
  * - `redactFull()` — full replacement. Used by debug.ts for diagnostic dumps.
  * - `redactSensitiveText()` — full replacement + truncation. Used by onboard-session.ts.
  *
- * Ref: https://github.com/NVIDIA/NemoClaw/issues/2381
+ * Ref: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/2381
  */
 
 import { TOKEN_PREFIX_PATTERNS, SECRET_PATTERNS } from "./secret-patterns";

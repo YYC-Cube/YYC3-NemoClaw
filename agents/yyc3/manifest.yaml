@@ -1,0 +1,73 @@
+# YYC³ AI Family Agent Manifest
+# 自研智能体体系 — 智能编程全链路 + 经管运维实战
+
+apiVersion: v1
+kind: Agent
+metadata:
+  name: yyc3
+  display: YYC³ AI Family
+  version: "0.1.0"
+  description: |
+    YYC³ 自研智能体体系，两层核心架构：
+    1. 智能编程全链路贯穿（千行→天枢→万物→宗师→守护）
+    2. 经管运维实战性落地（经·管·运·维·营 + 自愈链路）
+  license: Apache-2.0
+  repository: https://github.com/YYC-Cube/YYC3-NemoClaw.git
+  website: https://claw.yyc3.vip
+  maintainer: YYC³ AI Family
+
+spec:
+  runtime: node
+  entrypoint: agents/yyc3/start.js
+
+  ports:
+    api: 18790
+    dashboard: 18791
+
+  inference:
+    defaultProfile: yyc3-mlx
+    profiles:
+      - yyc3-mlx        # Mac M4 Max MLX (merged-v3)
+      - yyc3-ollama     # DGX N1 Ollama (qwen3.6:35b-a3b)
+      - yyc3-vllm       # DGX N2 vLLM (qwen3-coder-30b-a3b)
+
+  agents:
+    - name: 千行 (Navigator)
+      role: 意图识别 / 需求分析 / 部署路由
+      model: qwen3-0.6b
+      device: mac
+
+    - name: 天枢 (Orchestrator)
+      role: 架构编排 / 任务分配 / 复杂规划
+      model: qwen3.6-27b
+      device: dgx-n1
+
+    - name: 万物 (Generator)
+      role: 代码生成 / UI 组件 / 翻译词条
+      model: yyc3-merged-v3
+      device: mac
+
+    - name: 宗师 (Reviewer)
+      role: 代码审查 / 安全扫描 / 测试生成
+      model: qwen3-coder-30b-a3b
+      device: dgx-n1
+
+    - name: 守护 (Guardian)
+      role: 安全防护 / 凭证过滤 / 沙箱策略
+      model: yyc3-merged-v3
+      device: mac
+
+    - name: 先知 (Analyst)
+      role: 数据分析 / 趋势预测 / 运营洞察
+      model: qwen3.6-27b
+      device: dgx-n1
+
+    - name: 伯乐 (Talent)
+      role: 人才分析 / 绩效评估 / 资源优化
+      model: yyc3-merged-v3
+      device: mac
+
+    - name: 灵韵 (Innovator)
+      role: 创新孵化 / 风格生成 / 方案探索
+      model: yyc3-merged-v3
+      device: mac

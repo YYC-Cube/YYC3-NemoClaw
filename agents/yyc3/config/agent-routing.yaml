@@ -1,0 +1,72 @@
+# YYC³ Agent 推理路由配置
+# 8 Agent × 3 设备 × 3 推理框架 路由规则
+
+routes:
+  # 第一层：智能编程全链路
+  coding-pipeline:
+    description: 智能编程全链路
+    stages:
+      - name: 需求分析
+        agent: 千行
+        model: qwen3-0.6b
+        endpoint: http://192.168.3.22:25602/v1
+        timeout_ms: 500
+
+      - name: 架构设计
+        agent: 天枢
+        model: qwen3.6-27b
+        endpoint: http://192.168.3.101:25601/v1
+        timeout_ms: 5000
+
+      - name: 代码生成
+        agent: 万物
+        model: yyc3-merged-v3
+        endpoint: http://192.168.3.22:25603/v1
+        timeout_ms: 3000
+
+      - name: 代码审查
+        agent: 宗师
+        model: qwen3-coder-30b-a3b
+        endpoint: http://192.168.3.101:25601/v1
+        timeout_ms: 5000
+
+      - name: 安全审查
+        agent: 守护
+        model: yyc3-merged-v3
+        endpoint: http://192.168.3.22:25603/v1
+        timeout_ms: 2000
+
+      - name: 部署上线
+        agent: 千行
+        model: qwen3-0.6b
+        endpoint: http://192.168.3.22:25602/v1
+        timeout_ms: 500
+
+  # 第二层：经管运维实战
+  management:
+    description: 经管运维
+    agents:
+      经营决策:
+        agent: 天枢
+        model: qwen3.6-27b
+        endpoint: http://192.168.3.101:25601/v1
+
+      管理流程:
+        agent: 千行
+        model: yyc3-merged-v3
+        endpoint: http://192.168.3.22:25603/v1
+
+      运营效率:
+        agent: 先知
+        model: qwen3.6-27b
+        endpoint: http://192.168.3.101:25601/v1
+
+      维护保障:
+        agent: 守护
+        model: yyc3-merged-v3
+        endpoint: http://192.168.3.22:25603/v1
+
+      营销增长:
+        agent: 伯乐
+        model: yyc3-merged-v3
+        endpoint: http://192.168.3.22:25603/v1

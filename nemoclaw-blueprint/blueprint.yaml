@@ -19,6 +19,12 @@ profiles:
   - nim-local
   - vllm
   - routed
+  - yyc3-ollama
+  - yyc3-coder
+  - yyc3-mgmt
+  - yyc3-mlx
+  - yyc3-vllm
+  - yyc3-i18n
 
 description: |
   NemoClaw blueprint: orchestrates OpenClaw sandbox creation, migration,
@@ -92,6 +98,60 @@ components:
         credential_env: "NVIDIA_API_KEY"
         timeout_secs: 180
 
+      # YYC³ 本地推理 — DGX Spark N1 Ollama 服务 (通用)
+      yyc3-ollama:
+        provider_type: "openai"
+        provider_name: "yyc3-dgx-n1-ollama"
+        endpoint: "http://192.168.3.101:11434/v1"
+        model: "qwen3.6:35b-a3b"
+        credential_default: "dummy"
+        timeout_secs: 300
+
+      # YYC³ 本地推理 — DGX Spark N1 YYC³ Coder (代码专项)
+      yyc3-coder:
+        provider_type: "openai"
+        provider_name: "yyc3-dgx-n1-ollama"
+        endpoint: "http://192.168.3.101:11434/v1"
+        model: "yyc3-coder-v1:latest"
+        credential_default: "dummy"
+        timeout_secs: 300
+
+      # YYC³ 本地推理 — DGX Spark N1 YYC³ Mgmt (经管运维)
+      yyc3-mgmt:
+        provider_type: "openai"
+        provider_name: "yyc3-dgx-n1-ollama"
+        endpoint: "http://192.168.3.101:11434/v1"
+        model: "yyc3-mgmt-v2:latest"
+        credential_default: "dummy"
+        timeout_secs: 300
+
+      # YYC³ 本地推理 — Mac M4 Max MLX 服务 (YYC³ Family Coder)
+      yyc3-mlx:
+        provider_type: "openai"
+        provider_name: "yyc3-mac-mlx"
+        endpoint: "http://192.168.3.22:25603/v1"
+        model: "/Users/yanyu/models/Family/Coder/v0.2.0+mlx"
+        credential_default: "dummy"
+        timeout_secs: 300
+
+      # YYC³ 本地推理 — DGX Spark N2 Ollama 服务 (代码审查)
+      yyc3-vllm:
+        provider_type: "openai"
+        provider_name: "yyc3-dgx-n2-ollama"
+        endpoint: "http://192.168.3.102:11434/v1"
+        model: "qwen3-coder-30b-a3b-q4:latest"
+        credential_default: "dummy"
+        timeout_secs: 300
+
+      # YYC³ i18n 推理 — 本地沙箱 Ollama (AI 翻译引擎)
+      yyc3-i18n:
+        provider_type: "openai"
+        provider_name: "yyc3-local-ollama"
+        endpoint: "http://127.0.0.1:11434/v1"
+        model: "qwen3.6:35b-a3b"
+        credential_default: "dummy"
+        timeout_secs: 300
+
   router:
     enabled: true
     port: 4000
@@ -106,3 +166,11 @@ components:
           - host: "nim-service.local"
             port: 8000
             access: full
+
+      # YYC³ i18n MCP Server & AI Translation Engine
+      # MCP Server 由 OpenClaw 通过 stdio 内部管理，无需额外网络端口。
+      # AI 翻译引擎复用本地 Ollama 端点 (127.0.0.1:11434)。
+      # Sandbox → localhost 已在 base policy 中放行。
+      yyc3_i18n:
+        name: yyc3_i18n
+        description: "YYC³ i18n translation & quality estimation service"

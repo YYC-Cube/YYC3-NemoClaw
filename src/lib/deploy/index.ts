@@ -401,7 +401,7 @@ export async function executeDeploy(opts: DeployExecutionOptions): Promise<void>
   // subsequent connections against it. We keyscan first (not a probe with
   // StrictHostKeyChecking=no) to avoid a TOCTOU window where an attacker
   // could interpose between an unauthenticated probe and key capture.
-  // Ref: https://github.com/NVIDIA/NemoClaw/issues/691
+  // Ref: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/691
   const khDir = fs.mkdtempSync(path.join(os.tmpdir(), "nemoclaw-ssh-"));
   const knownHostsFile = path.join(khDir, "known_hosts");
   const realHost = resolveRealHost(name, execFileSync);

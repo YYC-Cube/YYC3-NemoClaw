@@ -25,7 +25,7 @@ export function printTelegramDirectMessageAllowlistWarning(
   warningMarker = "!",
 ): boolean {
   const account = getDefaultChannelAccount(channelBlock);
-  const allowFrom = Array.isArray(account?.allowFrom) ? account.allowFrom : [];
+  const allowFrom = Array.isArray(account?.allowFrom) ? account!.allowFrom : [];
   if (account?.dmPolicy !== "allowlist" || allowFrom.length > 0) return false;
 
   log(`  ${warningMarker} Telegram direct-message allowlist is empty in baked openclaw.json.`);

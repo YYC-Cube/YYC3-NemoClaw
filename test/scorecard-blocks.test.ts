@@ -62,7 +62,7 @@ function makeData(overrides: Partial<ScorecardData> = {}): ScorecardData {
     perfect: true,
     failedJobs: [],
     trendLine: "Trend: ↗️ Improving (yesterday had failures → today perfect)",
-    runUrl: "https://github.com/NVIDIA/NemoClaw/actions/runs/12345678",
+    runUrl: "https://github.com/YYC-Cube/YYC3-NemoClaw/actions/runs/12345678",
     ...overrides,
   };
 }
@@ -100,14 +100,14 @@ describe("buildBlocks — perfect scheduled run", () => {
     const actions = findRequiredBlock(blocks, (block) => block.type === "actions");
     expect(actions.elements?.[0]?.style).toBe("primary");
     expect(actions.elements?.[0]?.url).toBe(
-      "https://github.com/NVIDIA/NemoClaw/actions/runs/12345678",
+      "https://github.com/YYC-Cube/YYC3-NemoClaw/actions/runs/12345678",
     );
   });
 
   it("links the second button to the workflow file (derived from runUrl)", () => {
     const actions = findRequiredBlock(blocks, (block) => block.type === "actions");
     expect(actions.elements?.[1]?.url).toBe(
-      "https://github.com/NVIDIA/NemoClaw/actions/workflows/nightly-e2e.yaml",
+      "https://github.com/YYC-Cube/YYC3-NemoClaw/actions/workflows/nightly-e2e.yaml",
     );
   });
 
@@ -127,11 +127,11 @@ describe("buildBlocks — run with failures", () => {
       failedJobs: [
         {
           name: "cloud-e2e",
-          url: "https://github.com/NVIDIA/NemoClaw/actions/runs/12345678/job/100",
+          url: "https://github.com/YYC-Cube/YYC3-NemoClaw/actions/runs/12345678/job/100",
         },
         {
           name: "issue-2478-crash-loop-recovery-e2e",
-          url: "https://github.com/NVIDIA/NemoClaw/actions/runs/12345678/job/101",
+          url: "https://github.com/YYC-Cube/YYC3-NemoClaw/actions/runs/12345678/job/101",
         },
         // url=null exercises the fallback rendering (no API result for this job)
         { name: "sandbox-operations-e2e", url: null },
@@ -148,7 +148,7 @@ describe("buildBlocks — run with failures", () => {
     expect(failedSection.text?.text).toContain("Failed jobs (3)");
     // Hyperlinked entries use Slack mrkdwn `<url|text>` format.
     expect(failedSection.text?.text).toContain(
-      "<https://github.com/NVIDIA/NemoClaw/actions/runs/12345678/job/100|cloud-e2e>",
+      "<https://github.com/YYC-Cube/YYC3-NemoClaw/actions/runs/12345678/job/100|cloud-e2e>",
     );
     // Fallback: when url is null, render as code-formatted name.
     expect(failedSection.text?.text).toContain("`sandbox-operations-e2e`");

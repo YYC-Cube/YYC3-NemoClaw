@@ -9,7 +9,7 @@ import path from "node:path";
 import { versionGte } from "../domain/installer/version";
 
 export const NEMOCLAW_INSTALLER_URL = "https://www.nvidia.com/nemoclaw.sh";
-export const NEMOCLAW_REPO_URL = "https://github.com/NVIDIA/NemoClaw.git";
+export const NEMOCLAW_REPO_URL = "https://github.com/YYC-Cube/YYC3-NemoClaw.git";
 export const NEMOCLAW_UPDATE_COMMAND = `curl -fsSL ${NEMOCLAW_INSTALLER_URL} | bash`;
 export const NEMOCLAW_MAINTAINED_INSTALL_TAG = "lkg";
 

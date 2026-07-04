@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/NVIDIA/NemoClaw/schemas/openclaw-plugin.schema.json",
+  "$id": "https://github.com/YYC-Cube/YYC3-NemoClaw/schemas/openclaw-plugin.schema.json",
   "title": "NemoClaw OpenClaw Plugin Manifest",
   "description": "Schema for nemoclaw/openclaw.plugin.json — the OpenClaw plugin manifest that declares the plugin identity and its configuration schema.",
   "type": "object",

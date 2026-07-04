@@ -31,7 +31,7 @@ export interface VllmModelDef {
   /** `--max-model-len` flag value. */
   maxModelLen: number;
   /** Model-specific flags appended after the shared serving flags. */
-  modelArgs: string[];
+  modelArgs: readonly string[];
   /** True when the upstream HF repo requires accepting a licence. */
   gated: boolean;
   /**

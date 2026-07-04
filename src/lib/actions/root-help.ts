@@ -10,6 +10,7 @@ import {
 } from "../cli/command-registry";
 import { getRegisteredOclifCommandSummary } from "../cli/oclif-metadata";
 import { getVersion } from "../core/version";
+import { t, tGroup } from "../i18n";
 
 const useColor = !process.env.NO_COLOR && !!process.stdout.isTTY;
 const trueColor =
@@ -43,11 +44,11 @@ export function help(): void {
 
   lines.push("");
   lines.push(`  ${B}${G}${CLI_DISPLAY_NAME}${R}  ${D}v${getVersion()}${R}`);
-  lines.push(`  ${D}Deploy more secure, always-on AI assistants with a single command.${R}`);
+  lines.push(`  ${D}${t("brand.tagline")}${R}`);
 
   for (const [group, cmds] of grouped) {
     lines.push("");
-    lines.push(`  ${G}${group}:${R}`);
+    lines.push(`  ${G}${tGroup(group)}:${R}`);
 
     let isFirstInGroup = true;
     for (const cmd of cmds) {
@@ -70,35 +71,35 @@ export function help(): void {
   }
 
   lines.push("");
-  lines.push(`  ${G}Uninstall flags:${R}`);
-  lines.push(`    --yes${" ".repeat(29)}Skip the confirmation prompt`);
+  lines.push(`  ${G}${t("help.uninstallFlags")}:${R}`);
+  lines.push(`    --yes${" ".repeat(29)}${t("common.skip")}`);
   lines.push(`    --keep-openshell${" ".repeat(18)}Leave the openshell binary installed`);
   lines.push(`    --delete-models${" ".repeat(19)}Remove ${CLI_DISPLAY_NAME}-pulled Ollama models`);
 
   lines.push("");
-  lines.push(`  ${G}Reconfiguration (after onboard):${R}`);
+  lines.push(`  ${G}${t("help.reconfigure")}:${R}`);
   lines.push(
-    `    ${D}• Check inference route:   ${CLI_NAME} inference get${R}`,
-    `    ${D}• Change inference model:  ${CLI_NAME} inference set --model <model> --provider <provider>${R}`,
+    `    ${D}• ${t("help.checkInference")}:   ${CLI_NAME} inference get${R}`,
+    `    ${D}• ${t("help.changeModel")}:  ${CLI_NAME} inference set --model <model> --provider <provider>${R}`,
   );
-  lines.push(`    ${D}• Add network presets:     use the policy-add command on your sandbox${R}`);
+  lines.push(`    ${D}• ${t("help.addNetworkPresets")}:     use the policy-add command on your sandbox${R}`);
   lines.push(
-    `    ${D}• Change credentials:      credentials reset <PROVIDER>, then re-run onboard${R}`,
-  );
-  lines.push(
-    `    ${D}• Agent config is writable in the default sandbox so ${AGENT_PRODUCT_NAME} can manage runtime state.${R}`,
+    `    ${D}• ${t("help.changeCredentials")}:      credentials reset <PROVIDER>, then re-run onboard${R}`,
   );
   lines.push(
-    `    ${D}  Use host-side commands or re-run onboard for durable ${AGENT_PRODUCT_NAME} settings.${R}`,
+    `    ${D}• ${t("help.agentConfigNote", { product: AGENT_PRODUCT_NAME })}${R}`,
   );
   lines.push(
-    `    ${D}  Run \`${CLI_NAME} <name> shields up\` to lock config for sensitive workloads.${R}`,
+    `    ${D}  ${t("help.durableSettings", { product: AGENT_PRODUCT_NAME })}${R}`,
+  );
+  lines.push(
+    `    ${D}  ${t("help.lockConfig", { cli: CLI_NAME })}${R}`,
   );
 
   lines.push("");
-  lines.push(`  ${D}Powered by NVIDIA OpenShell · Nemotron · Agent Toolkit`);
-  lines.push(`  Credentials registered with the OpenShell gateway${R}`);
-  lines.push(`  ${D}https://www.nvidia.com/nemoclaw${R}`);
+  lines.push(`  ${D}${t("brand.poweredBy")}`);
+  lines.push(`  ${t("brand.credentialsNote")}${R}`);
+  lines.push(`  ${D}${t("brand.website")}${R}`);
   lines.push("");
 
   console.log(lines.join("\n"));

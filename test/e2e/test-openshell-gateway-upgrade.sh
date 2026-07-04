@@ -647,7 +647,7 @@ install_old_nemoclaw_and_claw() {
   if [ -d "$HOME/.nemoclaw/source/.git" ]; then
     local old_head expected_head
     old_head="$(git -C "$HOME/.nemoclaw/source" rev-parse HEAD 2>/dev/null || true)"
-    expected_head="$(git ls-remote https://github.com/NVIDIA/NemoClaw.git "refs/tags/${OLD_NEMOCLAW_REF}" | awk '{print $1}')"
+    expected_head="$(git ls-remote https://github.com/YYC-Cube/YYC3-NemoClaw.git "refs/tags/${OLD_NEMOCLAW_REF}" | awk '{print $1}')"
     [ -n "$old_head" ] && [ "$old_head" = "$expected_head" ] \
       || fail "old installer source is ${old_head:-unknown}, expected ${expected_head:-$OLD_NEMOCLAW_REF}"
     pass "Old NemoClaw source is ${OLD_NEMOCLAW_REF} (${old_head:0:12})"

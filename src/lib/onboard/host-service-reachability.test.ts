@@ -3,8 +3,8 @@
 //
 // Unit tests for the generic sandbox-side host-service reachability probe.
 //
-// See: https://github.com/NVIDIA/NemoClaw/issues/3340 (Ollama auth proxy) and
-//      https://github.com/NVIDIA/NemoClaw/issues/4564 (Model Router port 4000).
+// See: https://github.com/YYC-Cube/YYC3-NemoClaw/issues/3340 (Ollama auth proxy) and
+//      https://github.com/YYC-Cube/YYC3-NemoClaw/issues/4564 (Model Router port 4000).
 
 import { describe, expect, it, vi } from "vitest";
 

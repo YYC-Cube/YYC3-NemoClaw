@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/NVIDIA/NemoClaw/schemas/sandbox-policy.schema.json",
+  "$id": "https://github.com/YYC-Cube/YYC3-NemoClaw/schemas/sandbox-policy.schema.json",
   "title": "NemoClaw Sandbox Policy",
   "description": "Schema for the base sandbox policy (openclaw-sandbox.yaml) — defines filesystem, process, and network egress rules.",
   "type": "object",
