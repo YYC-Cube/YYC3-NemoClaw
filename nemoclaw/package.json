@@ -39,7 +39,7 @@
     "@biomejs/biome": "^2.4.14",
     "@types/node": "^22.0.0",
     "typescript": "^5.4.0",
-    "vitest": "^4.1.10"
+    "vitest": "^4.1.11"
   },
   "engines": {
     "node": ">=22.16.0"

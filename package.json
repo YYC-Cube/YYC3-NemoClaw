@@ -56,7 +56,7 @@
     "@aws-sdk/client-bedrock-runtime": "3.1046.0",
     "@oclif/core": "^4.10.5",
     "@yyc3/i18n-core": "file:./packages/i18n-core",
-    "js-yaml": "^5.2.2",
+    "js-yaml": "^4.3.2",
     "p-retry": "^4.6.2",
     "qrcode-terminal": "^0.12.0",
     "yaml": "^2.8.3"
