@@ -55,7 +55,7 @@
   "dependencies": {
     "@aws-sdk/client-bedrock-runtime": "3.1046.0",
     "@oclif/core": "^4.10.5",
-    "@yyc3/i18n-core": "file:./packages/i18n-core",
+    "@yyc3/i18n-core": "^3.5.0",
     "js-yaml": "^4.1.1",
     "p-retry": "^4.6.2",
     "qrcode-terminal": "^0.12.0",
